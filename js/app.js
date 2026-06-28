@@ -166,6 +166,34 @@
     })();
   })();
 
+  /* ── MARQUEE VELOCITY ── */
+  let marqueeSpeed = 1;
+  const marqueeTrack = qs('.mq-track');
+  if (marqueeTrack) {
+    gsap.to(marqueeTrack, {
+      xPercent: -50,
+      ease: "none",
+      duration: 25,
+      repeat: -1,
+      modifiers: {
+        xPercent: gsap.utils.unitize(x => parseFloat(x) * marqueeSpeed)
+      }
+    });
+    // Speed up marquee on scroll
+    window.addEventListener('scroll', () => {
+      marqueeSpeed = 3;
+      gsap.killTweensOf(marqueeTrack);
+      gsap.to(marqueeTrack, {
+        xPercent: -50, ease: "none", duration: 25 / marqueeSpeed, repeat: -1
+      });
+      clearTimeout(marqueeTrack.timer);
+      marqueeTrack.timer = setTimeout(() => {
+        marqueeSpeed = 1;
+        gsap.to(marqueeTrack, { xPercent: -50, ease: "none", duration: 25, repeat: -1 });
+      }, 150);
+    }, { passive: true });
+  }
+
   /* ── HERO SLIDESHOW ── */
   const slides   = qsa('.hs-slide');
   const dots     = qsa('.hs-dot');
@@ -282,13 +310,43 @@
       }
     );
 
-    // Work cards
-    ScrollTrigger.batch('.wc', {
-      onEnter: batch => gsap.from(batch, {
-        opacity: 0, y: 35, duration: .65, stagger: .09, ease: 'power3.out'
-      }),
-      start: 'top 85%',
-    });
+    // Horizontal scroll for works
+    const worksSection = qs('.works');
+    const wg = qs('#wg');
+    if (worksSection && wg && !mob()) {
+      const getScrollAmount = () => -(wg.scrollWidth - window.innerWidth + window.innerWidth * 0.1);
+      gsap.to(wg, {
+        x: getScrollAmount,
+        ease: "none",
+        scrollTrigger: {
+          trigger: worksSection,
+          start: "top 10%",
+          end: () => `+=${wg.scrollWidth}`,
+          pin: true,
+          scrub: 1,
+          invalidateOnRefresh: true,
+        }
+      });
+      // Filter tabs interaction for horizontal scroll
+      const tabs = qsa('.wf-tab');
+      const cards = qsa('.wc');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          const f = tab.dataset.f;
+          cards.forEach(c => {
+            const show = f === 'all' || c.dataset.cat === f;
+            c.style.display = show ? 'flex' : 'none';
+          });
+          ScrollTrigger.refresh();
+        });
+      });
+    } else if (mob() && wg) {
+      gsap.set(wg, { flexDirection: 'column' });
+      gsap.set('.wc', { width: '100%' });
+      gsap.set('.wc-lg', { width: '100%' });
+    }
 
     // Why items
     gsap.fromTo('.wi',

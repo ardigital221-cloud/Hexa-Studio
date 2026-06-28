@@ -43,6 +43,13 @@ select option { background: #0a1525; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 3px; }
 
+/* Noise overlay */
+.noise-overlay {
+  position: fixed; inset: 0; pointer-events: none; z-index: 999;
+  opacity: 0.05; mix-blend-mode: overlay;
+  background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+}
+
 /* ---- cursor ---- */
 .cur-dot, .cur-ring {
   position: fixed; pointer-events: none; z-index: 9999;
@@ -402,15 +409,15 @@ body.c-hover .cur-ring { width: 52px; height: 52px; }
 .wf-tab:hover { border-color: var(--blue); color: var(--text); }
 .wf-tab.active { background: var(--blue); border-color: var(--blue); color: #fff; }
 
-.wg { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem; }
-.wc-lg { grid-column: 1 / -1; }
+.works-h-scroll { width: 100%; overflow: hidden; padding-bottom: 2rem; }
+.wg { display: flex; gap: 4rem; width: max-content; padding-left: max(2rem, calc((100vw - 1200px) / 2)); padding-right: 2rem; }
 .wc {
   background: var(--card); border: 1px solid var(--border);
   border-radius: var(--rX); overflow: hidden;
   transition: transform .4s, box-shadow .4s, border-color .3s;
-  display: flex; flex-direction: column;
+  display: flex; flex-direction: column; width: 550px; flex-shrink: 0;
 }
-.wc-lg { flex-direction: row; }
+.wc-lg { width: 900px; flex-direction: row; }
 .wc:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,.5); border-color: rgba(14,165,233,.18); }
 
 /* preview panel */
