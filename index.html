@@ -3,46 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hexa Studio — Сайты на заказ | Веб-студия</title>
-    <meta name="description" content="Hexa Studio — создаём продающие сайты, лендинги, интернет-магазины и корпоративные порталы под ключ. Разработка с душой.">
+    <title>Hexa Studio — Веб-студия | Сайты на заказ</title>
+    <meta name="description" content="Hexa Studio — создаём продающие сайты, лендинги, интернет-магазины и корпоративные порталы. Разработка под ключ.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- Noise overlay -->
-<div class="noise-overlay"></div>
+<!-- Cursor -->
+<div class="cur-dot"  id="curDot"></div>
+<div class="cur-ring" id="curRing"></div>
 
 <!-- Preloader -->
 <div class="preloader" id="preloader">
-    <div class="preloader-inner">
-        <div class="preloader-hex">
-            <svg viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <polygon class="hex-stroke" points="50,3 97,27.5 97,87.5 50,112 3,87.5 3,27.5"/>
-            </svg>
-            <span class="preloader-letter">H</span>
-        </div>
-        <div class="preloader-bar"><div class="preloader-fill" id="preloaderFill"></div></div>
-        <span class="preloader-label">HEXA STUDIO</span>
+    <div class="pre-inner">
+        <svg class="pre-hex" viewBox="0 0 80 92" fill="none">
+            <polygon class="hex-path" points="40,3 77,23 77,69 40,89 3,69 3,23"/>
+            <defs>
+                <linearGradient id="hg" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%"   stop-color="#0EA5E9"/>
+                    <stop offset="100%" stop-color="#22D3EE"/>
+                </linearGradient>
+            </defs>
+        </svg>
+        <span class="pre-title">HEXA STUDIO</span>
     </div>
 </div>
 
-<!-- Custom Cursor -->
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-<div class="cursor-text" id="cursorText">СМОТРЕТЬ</div>
-
-<!-- Header -->
+<!-- ===== HEADER ===== -->
 <header class="header" id="header">
-    <div class="header-wrap">
+    <div class="hd-wrap">
         <a href="#" class="logo">
-            <svg class="logo-hex-icon" viewBox="0 0 36 42" fill="none">
-                <polygon points="18,2 34,11 34,31 18,40 2,31 2,11" stroke="url(#logoGrad)" stroke-width="2.5" fill="none"/>
+            <svg viewBox="0 0 32 37" fill="none" class="logo-svg">
+                <polygon points="16,2 30,10 30,27 16,35 2,27 2,10"
+                         stroke="url(#lg)" stroke-width="2.2" fill="none"/>
                 <defs>
-                    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#A855F7"/>
+                    <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%"   stop-color="#0EA5E9"/>
                         <stop offset="100%" stop-color="#22D3EE"/>
                     </linearGradient>
                 </defs>
@@ -50,321 +49,572 @@
             Hexa<span>Studio</span>
         </a>
         <nav class="nav">
-            <a href="#services" class="nav-link">Услуги</a>
-            <a href="#works" class="nav-link">Портфолио</a>
-            <a href="#why" class="nav-link">О нас</a>
-            <a href="#process" class="nav-link">Процесс</a>
-            <a href="#contacts" class="nav-link">Контакт</a>
+            <a href="#services" class="nl">Услуги</a>
+            <a href="#works"    class="nl">Работы</a>
+            <a href="#why"      class="nl">О нас</a>
+            <a href="#process"  class="nl">Процесс</a>
         </nav>
-        <a href="#contacts" class="btn-header magnetic" data-magnetic>Обсудить проект</a>
-        <button class="burger" id="burger" aria-label="Menu">
-            <div class="burger-lines"><span></span><span></span></div>
+        <a href="#contacts" class="btn-hd" data-magnetic>Обсудить проект</a>
+        <button class="burger" id="burger">
+            <span></span><span></span>
         </button>
     </div>
 </header>
 
-<!-- Mobile Nav -->
-<div class="mob-overlay" id="mobOverlay">
-    <nav class="mob-nav">
-        <a href="#services"  class="mob-link">Услуги</a>
-        <a href="#works"     class="mob-link">Портфолио</a>
-        <a href="#why"       class="mob-link">О нас</a>
-        <a href="#process"   class="mob-link">Процесс</a>
-        <a href="#contacts"  class="mob-link">Контакт</a>
+<!-- Mobile menu -->
+<div class="mob-menu" id="mobMenu">
+    <nav>
+        <a href="#services" class="mm-link">Услуги</a>
+        <a href="#works"    class="mm-link">Работы</a>
+        <a href="#why"      class="mm-link">О нас</a>
+        <a href="#process"  class="mm-link">Процесс</a>
+        <a href="#contacts" class="mm-link mm-cta">Обсудить проект</a>
     </nav>
-    <div class="mob-footer">hello@hexastudio.dev</div>
 </div>
 
-<!-- ==================== HERO ==================== -->
-<section class="hero" id="hero" data-section="hero">
-    <canvas id="particleCanvas"></canvas>
-    <div class="hero-gradient-orb orb-1"></div>
-    <div class="hero-gradient-orb orb-2"></div>
-    <div class="hero-gradient-orb orb-3"></div>
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+    <canvas id="bgCanvas"></canvas>
+    <div class="hero-orb o1"></div>
+    <div class="hero-orb o2"></div>
 
-    <!-- Floating badges -->
-    <div class="float-zone" id="floatZone">
-        <div class="fbadge" data-vx="0.5"  data-vy="0.3">Лендинги</div>
-        <div class="fbadge" data-vx="-0.6" data-vy="0.5">Интернет-магазины</div>
-        <div class="fbadge" data-vx="0.4"  data-vy="-0.6">Корпоративные сайты</div>
-        <div class="fbadge" data-vx="-0.5" data-vy="-0.4">Веб-приложения</div>
-        <div class="fbadge" data-vx="0.7"  data-vy="0.4">UI/UX Дизайн</div>
-        <div class="fbadge" data-vx="-0.3" data-vy="0.7">SEO-оптимизация</div>
+    <div class="hero-layout">
+        <!-- Left: text -->
+        <div class="hero-left">
+            <div class="hero-badge"><span class="live-dot"></span>Принимаем проекты</div>
+            <h1 class="hero-h1">
+                <div class="hline"><span>Создаём сайты</span></div>
+                <div class="hline"><span class="hl-blue">которые работают</span></div>
+            </h1>
+            <p class="hero-p">Разрабатываем лендинги, интернет-магазины и корпоративные сайты. Чистый код, современный дизайн, понятный результат.</p>
+            <div class="hero-btns">
+                <a href="#works"    class="btn-blue" data-magnetic>Смотреть работы</a>
+                <a href="#contacts" class="btn-line" data-magnetic>Получить расчёт</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hs"><strong id="cntProjects">0</strong><span>проектов сдано</span></div>
+                <div class="hs-div"></div>
+                <div class="hs"><strong>8 лет</strong><span>в разработке</span></div>
+                <div class="hs-div"></div>
+                <div class="hs"><strong id="cntScore">0</strong><span>PageSpeed</span></div>
+            </div>
+        </div>
+
+        <!-- Right: animated device mockup -->
+        <div class="hero-right">
+            <div class="device-wrap">
+                <!-- Floating cards around device -->
+                <div class="dev-float-card dfc-1">
+                    <div class="dfc-icon dfc-icon--up">
+                        <svg viewBox="0 0 16 16" fill="none"><polyline points="2,12 6,7 10,10 14,4" stroke="#22D3EE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="dfc-text">
+                        <strong>+67%</strong>
+                        <span>Конверсия</span>
+                    </div>
+                </div>
+                <div class="dev-float-card dfc-2">
+                    <div class="dfc-icon dfc-icon--speed">
+                        <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#0EA5E9" stroke-width="1.5"/><path d="M8 8 L11.5 4.5" stroke="#0EA5E9" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="8" r="1" fill="#0EA5E9"/></svg>
+                    </div>
+                    <div class="dfc-text">
+                        <strong>98 / 100</strong>
+                        <span>PageSpeed</span>
+                    </div>
+                </div>
+                <div class="dev-float-card dfc-3">
+                    <svg class="dfc-star" viewBox="0 0 16 16" fill="#F59E0B"><path d="M8 1l1.8 3.6L14 5.4l-3 2.9.7 4.1L8 10.4l-3.7 2 .7-4.1-3-2.9 4.2-.8z"/></svg>
+                    <div class="dfc-text">
+                        <strong>5.0 рейтинг</strong>
+                        <span>120+ клиентов</span>
+                    </div>
+                </div>
+
+                <!-- Browser frame -->
+                <div class="browser-frame">
+                    <div class="bf-bar">
+                        <div class="bf-dots"><span></span><span></span><span></span></div>
+                        <div class="bf-url">hexastudio.dev/project</div>
+                    </div>
+                    <div class="bf-screen" id="heroScreen">
+                        <!-- Rotating site previews -->
+                        <div class="hs-slide active hs-slide--dark">
+                            <div class="hss-nav">
+                                <div class="hss-logo"></div>
+                                <div class="hss-links"><div></div><div></div><div></div></div>
+                                <div class="hss-cta"></div>
+                            </div>
+                            <div class="hss-hero">
+                                <div class="hss-hero-text">
+                                    <div class="hss-h1">Luxury Fashion</div>
+                                    <div class="hss-h2">Brand New Collection 2026</div>
+                                    <div class="hss-p"></div>
+                                    <div class="hss-btn">Shop Now</div>
+                                </div>
+                                <div class="hss-hero-img hss-img--fashion"></div>
+                            </div>
+                        </div>
+                        <div class="hs-slide hs-slide--light">
+                            <div class="hss-nav hss-nav--light">
+                                <div class="hss-logo hss-logo--dark"></div>
+                                <div class="hss-links hss-links--dark"><div></div><div></div><div></div></div>
+                                <div class="hss-cta hss-cta--blue"></div>
+                            </div>
+                            <div class="hss-hero hss-hero--light">
+                                <div class="hss-hero-text">
+                                    <div class="hss-tag">SaaS Platform</div>
+                                    <div class="hss-h1 hss-h1--dark">Автоматизируйте бизнес</div>
+                                    <div class="hss-h2 hss-h2--dark">Рост выручки с первого дня</div>
+                                    <div class="hss-btn hss-btn--blue">Начать бесплатно</div>
+                                </div>
+                                <div class="hss-hero-img hss-img--saas"></div>
+                            </div>
+                        </div>
+                        <div class="hs-slide hs-slide--green">
+                            <div class="hss-nav">
+                                <div class="hss-logo"></div>
+                                <div class="hss-links"><div></div><div></div><div></div></div>
+                                <div class="hss-cta hss-cta--green"></div>
+                            </div>
+                            <div class="hss-hero">
+                                <div class="hss-hero-text">
+                                    <div class="hss-tag hss-tag--green">Fitness App</div>
+                                    <div class="hss-h1">Train Smarter</div>
+                                    <div class="hss-h2">Every Rep Counts</div>
+                                    <div class="hss-btn hss-btn--green">Download Free</div>
+                                </div>
+                                <div class="hss-hero-img hss-img--fitness"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide indicators -->
+                    <div class="hs-dots">
+                        <span class="hs-dot active" data-idx="0"></span>
+                        <span class="hs-dot" data-idx="1"></span>
+                        <span class="hs-dot" data-idx="2"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="hero-body">
-        <div class="hero-tag"><span class="pulse-dot"></span>Веб-студия нового поколения</div>
-        <h1 class="hero-h1">
-            <div class="h1-row"><span class="scramble-text" data-text="Создаём сайты">Создаём сайты</span></div>
-            <div class="h1-row gradient-line"><span class="scramble-text" data-text="которые продают">которые продают</span></div>
-        </h1>
-        <p class="hero-p">Разрабатываем лендинги, интернет-магазины и корпоративные сайты — под ключ, с дизайном который запоминается и конверсией которая радует.</p>
-        <div class="hero-actions">
-            <a href="#works"    class="btn-glow magnetic" data-magnetic>Смотреть работы</a>
-            <a href="#contacts" class="btn-ghost magnetic" data-magnetic>Получить расчёт</a>
-        </div>
-        <div class="hero-nums">
-            <div class="hnum"><strong>120+</strong><span>проектов</span></div>
-            <div class="hnum-sep"></div>
-            <div class="hnum"><strong>8 лет</strong><span>опыта</span></div>
-            <div class="hnum-sep"></div>
-            <div class="hnum"><strong>97%</strong><span>довольных клиентов</span></div>
-        </div>
-    </div>
-
-    <div class="hero-scroll"><div class="scroll-track"></div><span>Scroll</span></div>
+    <div class="hero-scroll"><div class="sc-line"></div><span>Scroll</span></div>
 </section>
 
-<!-- ==================== MARQUEE ==================== -->
-<div class="marquee-wrap">
-    <div class="marquee-inner">
-        <div class="marquee-slide">
-            <span>Лендинги</span><i>✦</i>
-            <span>Интернет-магазины</span><i>✦</i>
-            <span>Корпоративные сайты</span><i>✦</i>
-            <span>Веб-приложения</span><i>✦</i>
-            <span>UI/UX Дизайн</span><i>✦</i>
-            <span>SEO оптимизация</span><i>✦</i>
-            <span>Брендинг</span><i>✦</i>
-            <span>Лендинги</span><i>✦</i>
-            <span>Интернет-магазины</span><i>✦</i>
-            <span>Корпоративные сайты</span><i>✦</i>
-            <span>Веб-приложения</span><i>✦</i>
-            <span>UI/UX Дизайн</span><i>✦</i>
-            <span>SEO оптимизация</span><i>✦</i>
-            <span>Брендинг</span><i>✦</i>
-        </div>
+<!-- ===== MARQUEE ===== -->
+<div class="marquee">
+    <div class="mq-track">
+        <span>Лендинги</span><i>—</i>
+        <span>Интернет-магазины</span><i>—</i>
+        <span>Корпоративные сайты</span><i>—</i>
+        <span>Веб-приложения</span><i>—</i>
+        <span>UI/UX Дизайн</span><i>—</i>
+        <span>SEO оптимизация</span><i>—</i>
+        <span>Лендинги</span><i>—</i>
+        <span>Интернет-магазины</span><i>—</i>
+        <span>Корпоративные сайты</span><i>—</i>
+        <span>Веб-приложения</span><i>—</i>
+        <span>UI/UX Дизайн</span><i>—</i>
+        <span>SEO оптимизация</span><i>—</i>
     </div>
 </div>
 
-<!-- ==================== SERVICES ==================== -->
-<section class="services section" id="services">
+<!-- ===== SERVICES ===== -->
+<section class="sec services" id="services">
     <div class="container">
-        <div class="section-top">
+        <div class="sec-head">
             <div class="stag">Услуги</div>
             <h2 class="sh2">Что мы <em>делаем</em></h2>
         </div>
         <div class="srv-grid">
-            <div class="srv-card tilt-card" data-tilt>
-                <div class="srv-icon">
-                    <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="10" width="40" height="28" rx="4" stroke="currentColor" stroke-width="2"/><line x1="4" y1="18" x2="44" y2="18" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="14" r="1.5" fill="currentColor"/><circle cx="16" cy="14" r="1.5" fill="currentColor"/><circle cx="22" cy="14" r="1.5" fill="currentColor"/></svg>
+            <div class="srv-card" data-tilt>
+                <div class="srv-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="2" y1="7" x2="22" y2="7"/><circle cx="5" cy="5" r="0.5" fill="currentColor"/><circle cx="7.5" cy="5" r="0.5" fill="currentColor"/><circle cx="10" cy="5" r="0.5" fill="currentColor"/><line x1="8" y1="17" x2="8" y2="21"/><line x1="16" y1="17" x2="16" y2="21"/><line x1="5" y1="21" x2="19" y2="21"/></svg>
                 </div>
                 <h3>Лендинги</h3>
-                <p>Продающие одностраничники с высокой конверсией. Запускаем за 7–14 дней. A/B тестирование в подарок.</p>
+                <p>Продающие одностраничники с высокой конверсией. Запуск за 7–14 дней, A/B тест в подарок.</p>
                 <div class="srv-price">от 60 000 ₽</div>
-                <a href="#contacts" class="srv-link">Заказать →</a>
+                <a href="#contacts" class="srv-arrow">Подробнее <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg></a>
             </div>
-            <div class="srv-card tilt-card" data-tilt>
-                <div class="srv-icon">
-                    <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="6" width="40" height="36" rx="4" stroke="currentColor" stroke-width="2"/><line x1="4" y1="14" x2="44" y2="14" stroke="currentColor" stroke-width="2"/><rect x="10" y="20" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="26" y="20" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><line x1="10" y1="36" x2="38" y2="36" stroke="currentColor" stroke-width="1.5"/></svg>
+            <div class="srv-card" data-tilt>
+                <div class="srv-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="2" y1="8" x2="22" y2="8"/><line x1="8" y1="2" x2="8" y2="22"/><circle cx="15" cy="15" r="2"/><path d="M15 13V11M15 19v-2"/></svg>
                 </div>
                 <h3>Интернет-магазины</h3>
-                <p>Полнофункциональные магазины с корзиной, оплатой, личным кабинетом и интеграцией с 1С/CRM.</p>
+                <p>Полный каталог, корзина, оплата, CRM. Интеграция с 1С, Битрикс24, Яндекс.Маркет.</p>
                 <div class="srv-price">от 150 000 ₽</div>
-                <a href="#contacts" class="srv-link">Заказать →</a>
+                <a href="#contacts" class="srv-arrow">Подробнее <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg></a>
             </div>
-            <div class="srv-card tilt-card" data-tilt>
-                <div class="srv-icon">
-                    <svg viewBox="0 0 48 48" fill="none"><path d="M24 4L44 16V32L24 44L4 32V16L24 4Z" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="2"/></svg>
+            <div class="srv-card" data-tilt>
+                <div class="srv-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="9" x2="22" y2="9"/><rect x="5" y="13" width="4" height="4" rx="0.5"/><line x1="12" y1="14" x2="19" y2="14"/><line x1="12" y1="17" x2="16" y2="17"/></svg>
                 </div>
                 <h3>Корпоративные сайты</h3>
-                <p>Статусные сайты компаний с CMS, мультиязычностью и корпоративным порталом для сотрудников.</p>
+                <p>Статусные сайты с CMS, мультиязычностью и корпоративным порталом для команды.</p>
                 <div class="srv-price">от 120 000 ₽</div>
-                <a href="#contacts" class="srv-link">Заказать →</a>
+                <a href="#contacts" class="srv-arrow">Подробнее <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg></a>
             </div>
-            <div class="srv-card tilt-card" data-tilt>
-                <div class="srv-icon">
-                    <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="6" stroke="currentColor" stroke-width="2"/><path d="M18 20l-4 4 4 4M30 20l4 4-4 4M26 16l-4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <div class="srv-card" data-tilt>
+                <div class="srv-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="18" rx="2"/><polyline points="8,10 4,14 8,18"/><polyline points="16,10 20,14 16,18"/><line x1="12" y1="7" x2="12" y2="21"/></svg>
                 </div>
                 <h3>Веб-приложения</h3>
-                <p>SPA и PWA приложения на React/Next.js. Личные кабинеты, дашборды, CRM и сложные платформы.</p>
+                <p>SPA и PWA на React / Next.js. Личные кабинеты, дашборды, CRM и сложные платформы.</p>
                 <div class="srv-price">от 250 000 ₽</div>
-                <a href="#contacts" class="srv-link">Заказать →</a>
+                <a href="#contacts" class="srv-arrow">Подробнее <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg></a>
             </div>
-            <div class="srv-card tilt-card" data-tilt>
-                <div class="srv-icon">
-                    <svg viewBox="0 0 48 48" fill="none"><path d="M10 38L24 10L38 38" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="15" y1="28" x2="33" y2="28" stroke="currentColor" stroke-width="2"/></svg>
+            <div class="srv-card" data-tilt>
+                <div class="srv-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>
                 </div>
                 <h3>UI/UX Дизайн</h3>
-                <p>Прототипирование, дизайн-системы, пользовательские исследования. Figma-макеты под ваши требования.</p>
+                <p>Прототипирование, дизайн-системы, Figma-макеты. Исследование пользователей и CJM.</p>
                 <div class="srv-price">от 40 000 ₽</div>
-                <a href="#contacts" class="srv-link">Заказать →</a>
+                <a href="#contacts" class="srv-arrow">Подробнее <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg></a>
             </div>
-            <div class="srv-card tilt-card" data-tilt>
-                <div class="srv-icon">
-                    <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/><path d="M24 6C24 6 16 16 16 24C16 32 24 42 24 42" stroke="currentColor" stroke-width="1.5"/><path d="M6 24H42" stroke="currentColor" stroke-width="1.5"/><path d="M8 16H40M8 32H40" stroke="currentColor" stroke-width="1"/></svg>
+            <div class="srv-card" data-tilt>
+                <div class="srv-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3C12 3 8 8 8 12C8 16 12 21 12 21"/><path d="M3 12H21"/><path d="M5 7H19M5 17H19"/></svg>
                 </div>
                 <h3>SEO & Продвижение</h3>
-                <p>Техническое SEO, семантика, внутренняя оптимизация. Выводим в ТОП-10 Яндекс и Google.</p>
+                <p>Техническое SEO, семантическое ядро, внутренняя оптимизация. Топ-10 за 3–6 месяцев.</p>
                 <div class="srv-price">от 30 000 ₽/мес</div>
-                <a href="#contacts" class="srv-link">Заказать →</a>
+                <a href="#contacts" class="srv-arrow">Подробнее <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg></a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ==================== WORKS ==================== -->
-<section class="works section" id="works">
+<!-- ===== WORKS ===== -->
+<section class="sec works" id="works">
     <div class="container">
-        <div class="section-top">
+        <div class="sec-head">
             <div class="stag">Портфолио</div>
             <h2 class="sh2">Наши <em>работы</em></h2>
         </div>
 
-        <!-- Filter -->
-        <div class="works-filter" id="worksFilter">
-            <button class="filter-btn active" data-filter="all">Все</button>
-            <button class="filter-btn" data-filter="landing">Лендинги</button>
-            <button class="filter-btn" data-filter="shop">Магазины</button>
-            <button class="filter-btn" data-filter="corp">Корпоративные</button>
-            <button class="filter-btn" data-filter="app">Приложения</button>
+        <div class="wf-tabs" id="wfTabs">
+            <button class="wf-tab active" data-f="all">Все</button>
+            <button class="wf-tab" data-f="landing">Лендинги</button>
+            <button class="wf-tab" data-f="shop">Магазины</button>
+            <button class="wf-tab" data-f="corp">Корпоративные</button>
+            <button class="wf-tab" data-f="app">Приложения</button>
         </div>
 
-        <div class="works-grid" id="worksGrid">
+        <div class="wg" id="wg">
 
-            <!-- Work 1 — Luxury Brand Landing -->
-            <div class="wcard" data-cat="landing">
-                <div class="wcard-screen">
-                    <div class="mockup-browser">
-                        <div class="mb-bar"><span></span><span></span><span></span></div>
-                        <div class="mb-body site-aura">
-                            <div class="sa-nav"><div class="sa-logo"></div><div class="sa-links"><div></div><div></div><div></div></div></div>
-                            <div class="sa-hero">
-                                <div class="sa-hero-bg"></div>
-                                <div class="sa-hero-text"><div class="sa-h1"></div><div class="sa-h2"></div><div class="sa-btn"></div></div>
-                                <div class="sa-hero-img"></div>
+            <!-- 1: Luxury perfume landing -->
+            <div class="wc wc-lg" data-cat="landing">
+                <div class="wc-preview">
+                    <div class="preview-browser">
+                        <div class="pb-bar"><span></span><span></span><span></span><div class="pb-url">aura-perfumes.ru</div></div>
+                        <div class="pb-body" style="background:#0C0A09;">
+                            <div class="pw-nav" style="border-bottom:1px solid rgba(201,169,110,0.15);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;">
+                                <div style="font-size:10px;font-weight:700;color:#C9A96E;letter-spacing:3px;">AURA</div>
+                                <div style="display:flex;gap:14px;">
+                                    <div style="font-size:7px;color:rgba(255,255,255,0.5);">Коллекция</div>
+                                    <div style="font-size:7px;color:rgba(255,255,255,0.5);">О бренде</div>
+                                    <div style="font-size:7px;color:rgba(255,255,255,0.5);">Магазин</div>
+                                </div>
+                                <div style="font-size:7px;font-weight:600;color:#C9A96E;border:1px solid rgba(201,169,110,0.4);padding:3px 8px;border-radius:2px;">Купить</div>
                             </div>
-                            <div class="sa-cards"><div class="sa-card"></div><div class="sa-card"></div><div class="sa-card"></div></div>
+                            <div style="display:grid;grid-template-columns:1fr 1fr;min-height:130px;">
+                                <div style="padding:20px;display:flex;flex-direction:column;justify-content:center;gap:8px;">
+                                    <div style="font-size:7px;color:rgba(201,169,110,0.7);letter-spacing:4px;text-transform:uppercase;">Новая коллекция</div>
+                                    <div style="font-size:16px;font-weight:700;color:#F5ECD7;line-height:1.2;">Рождённая<br>из тишины</div>
+                                    <div style="font-size:7px;color:rgba(245,236,215,0.5);line-height:1.5;max-width:120px;">Парфюм для тех, кто ценит молчание красоты</div>
+                                    <div style="display:flex;gap:8px;margin-top:4px;">
+                                        <div style="padding:5px 12px;background:#C9A96E;font-size:7px;font-weight:600;color:#0C0A09;border-radius:2px;">Заказать</div>
+                                        <div style="padding:5px 12px;border:1px solid rgba(201,169,110,0.3);font-size:7px;color:#C9A96E;border-radius:2px;">О духах</div>
+                                    </div>
+                                </div>
+                                <div style="position:relative;overflow:hidden;background:radial-gradient(ellipse at center,rgba(201,169,110,0.2) 0%,transparent 70%);">
+                                    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+                                        <div style="width:60px;height:90px;background:linear-gradient(160deg,#C9A96E,#8B6914,#C9A96E);border-radius:4px 4px 8px 8px;box-shadow:0 10px 40px rgba(201,169,110,0.4);position:relative;">
+                                            <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:16px;height:8px;background:#8B6914;border-radius:1px;"></div>
+                                            <div style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);font-size:5px;color:rgba(255,255,255,0.6);white-space:nowrap;">AURA N°7</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:flex;gap:8px;padding:10px 20px;border-top:1px solid rgba(201,169,110,0.08);">
+                                <div style="flex:1;background:rgba(201,169,110,0.06);border:1px solid rgba(201,169,110,0.1);border-radius:4px;padding:8px;text-align:center;">
+                                    <div style="font-size:8px;color:#C9A96E;font-weight:600;">Oud & Amber</div>
+                                    <div style="font-size:6px;color:rgba(255,255,255,0.3);margin-top:2px;">Восточная</div>
+                                </div>
+                                <div style="flex:1;background:rgba(201,169,110,0.06);border:1px solid rgba(201,169,110,0.1);border-radius:4px;padding:8px;text-align:center;">
+                                    <div style="font-size:8px;color:#C9A96E;font-weight:600;">Rose Noir</div>
+                                    <div style="font-size:6px;color:rgba(255,255,255,0.3);margin-top:2px;">Флоральная</div>
+                                </div>
+                                <div style="flex:1;background:rgba(201,169,110,0.06);border:1px solid rgba(201,169,110,0.1);border-radius:4px;padding:8px;text-align:center;">
+                                    <div style="font-size:8px;color:#C9A96E;font-weight:600;">Blanc Ciel</div>
+                                    <div style="font-size:6px;color:rgba(255,255,255,0.3);margin-top:2px;">Свежая</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="wcard-info">
-                    <div class="wcard-tag">Лендинг</div>
+                <div class="wc-info">
+                    <div class="wc-tag">Лендинг</div>
                     <h3>Aura Perfumes</h3>
-                    <p>Лендинг для премиального парфюмерного бренда. Параллакс, 3D-анимации флаконов, конверсия +41%.</p>
-                    <div class="wcard-tech"><span>Figma</span><span>GSAP</span><span>Three.js</span></div>
+                    <p>Премиальный лендинг для парфюмерного бренда. Тёмная эстетика, анимированные 3D-модели флаконов. Конверсия выросла на <strong>41%</strong> после запуска.</p>
+                    <div class="wc-chips"><span>Figma</span><span>GSAP</span><span>Three.js</span></div>
                 </div>
             </div>
 
-            <!-- Work 2 — E-commerce -->
-            <div class="wcard wcard-wide" data-cat="shop">
-                <div class="wcard-screen">
-                    <div class="mockup-browser">
-                        <div class="mb-bar"><span></span><span></span><span></span></div>
-                        <div class="mb-body site-shop">
-                            <div class="sh-header"><div class="sh-logo"></div><div class="sh-search"></div><div class="sh-cart">🛒</div></div>
-                            <div class="sh-banner">
-                                <div class="sh-banner-text"><div></div><div></div><div class="sh-btn"></div></div>
-                                <div class="sh-banner-img"></div>
-                            </div>
-                            <div class="sh-products">
-                                <div class="sh-prod"><div class="sh-prod-img"></div><div class="sh-prod-name"></div><div class="sh-prod-price"></div></div>
-                                <div class="sh-prod"><div class="sh-prod-img sh-prod-img--2"></div><div class="sh-prod-name"></div><div class="sh-prod-price"></div></div>
-                                <div class="sh-prod"><div class="sh-prod-img sh-prod-img--3"></div><div class="sh-prod-name"></div><div class="sh-prod-price"></div></div>
-                                <div class="sh-prod"><div class="sh-prod-img sh-prod-img--4"></div><div class="sh-prod-name"></div><div class="sh-prod-price"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="wcard-info">
-                    <div class="wcard-tag">Интернет-магазин</div>
-                    <h3>UrbanThreads — Магазин одежды</h3>
-                    <p>Полнофункциональный магазин с фильтрами, личным кабинетом, интеграцией с 1С и системой лояльности. 2 500+ SKU, оборот с первого месяца — 4.2 млн ₽.</p>
-                    <div class="wcard-tech"><span>Next.js</span><span>Stripe</span><span>Figma</span><span>1С</span></div>
-                </div>
-            </div>
-
-            <!-- Work 3 — Corporate -->
-            <div class="wcard" data-cat="corp">
-                <div class="wcard-screen">
-                    <div class="mockup-browser">
-                        <div class="mb-bar"><span></span><span></span><span></span></div>
-                        <div class="mb-body site-corp">
-                            <div class="sc-nav"><div class="sc-logo"></div><div class="sc-menu"><div></div><div></div><div></div><div></div></div></div>
-                            <div class="sc-hero">
-                                <div class="sc-hero-content"><div class="sc-h1"></div><div class="sc-h2"></div><div class="sc-h3"></div><div class="sc-cta"></div></div>
-                                <div class="sc-hero-visual">
-                                    <div class="sc-circle sc-c1"></div>
-                                    <div class="sc-circle sc-c2"></div>
-                                    <div class="sc-circle sc-c3"></div>
+            <!-- 2: E-commerce -->
+            <div class="wc" data-cat="shop">
+                <div class="wc-preview">
+                    <div class="preview-browser">
+                        <div class="pb-bar"><span></span><span></span><span></span><div class="pb-url">urban-threads.ru</div></div>
+                        <div class="pb-body" style="background:#F7F7F7;">
+                            <div style="background:#fff;padding:8px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #eee;">
+                                <div style="font-size:9px;font-weight:700;color:#111;letter-spacing:2px;">URBAN</div>
+                                <div style="display:flex;gap:8px;">
+                                    <div style="font-size:6.5px;color:#666;">Мужское</div>
+                                    <div style="font-size:6.5px;color:#666;">Женское</div>
+                                    <div style="font-size:6.5px;color:#666;">Скидки</div>
+                                </div>
+                                <div style="display:flex;gap:6px;align-items:center;">
+                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
                                 </div>
                             </div>
-                            <div class="sc-stats"><div class="sc-stat"></div><div class="sc-stat"></div><div class="sc-stat"></div></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="wcard-info">
-                    <div class="wcard-tag">Корпоративный</div>
-                    <h3>InvestGroup Holding</h3>
-                    <p>Корпоративный сайт инвестиционного холдинга с мультиязычностью, IR-порталом и интеграцией с Битрикс24.</p>
-                    <div class="wcard-tech"><span>React</span><span>Bitrix24</span><span>i18n</span></div>
-                </div>
-            </div>
-
-            <!-- Work 4 — App/Dashboard -->
-            <div class="wcard" data-cat="app">
-                <div class="wcard-screen">
-                    <div class="mockup-browser">
-                        <div class="mb-bar"><span></span><span></span><span></span></div>
-                        <div class="mb-body site-dash">
-                            <div class="sd-sidebar">
-                                <div class="sd-logo"></div>
-                                <div class="sd-menu-items"><div class="sd-mi active"></div><div class="sd-mi"></div><div class="sd-mi"></div><div class="sd-mi"></div></div>
-                            </div>
-                            <div class="sd-content">
-                                <div class="sd-top"><div class="sd-title"></div><div class="sd-avatar"></div></div>
-                                <div class="sd-cards">
-                                    <div class="sd-kpi sd-kpi--1"><div></div><div></div></div>
-                                    <div class="sd-kpi sd-kpi--2"><div></div><div></div></div>
-                                    <div class="sd-kpi sd-kpi--3"><div></div><div></div></div>
+                            <div style="background:#111;padding:16px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                                <div>
+                                    <div style="font-size:6px;color:rgba(255,255,255,0.5);letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;">Новая коллекция</div>
+                                    <div style="font-size:13px;font-weight:700;color:#fff;line-height:1.2;">Осень — Зима<br>2026</div>
+                                    <div style="margin-top:8px;display:inline-block;background:#fff;padding:4px 10px;border-radius:2px;font-size:6.5px;font-weight:700;color:#111;">Смотреть</div>
                                 </div>
-                                <div class="sd-chart">
-                                    <div class="sd-chart-bars">
-                                        <div style="height:40%"></div><div style="height:65%"></div>
-                                        <div style="height:45%"></div><div style="height:80%"></div>
-                                        <div style="height:55%"></div><div style="height:90%"></div>
-                                        <div style="height:70%"></div>
+                                <div style="width:60px;height:70px;background:linear-gradient(160deg,#333,#111);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:20px;opacity:0.8;">🧥</div>
+                            </div>
+                            <div style="padding:10px 14px;background:#F7F7F7;">
+                                <div style="font-size:7px;font-weight:600;color:#111;margin-bottom:8px;">Новинки</div>
+                                <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;">
+                                    <div style="background:#fff;border-radius:4px;overflow:hidden;">
+                                        <div style="height:36px;background:linear-gradient(135deg,#C7B8A3,#A0907E);"></div>
+                                        <div style="padding:4px;"><div style="font-size:5.5px;color:#333;font-weight:600;">Пальто</div><div style="font-size:5.5px;color:#111;font-weight:700;margin-top:1px;">12 900 ₽</div></div>
+                                    </div>
+                                    <div style="background:#fff;border-radius:4px;overflow:hidden;">
+                                        <div style="height:36px;background:linear-gradient(135deg,#2C3E50,#3498DB);"></div>
+                                        <div style="padding:4px;"><div style="font-size:5.5px;color:#333;font-weight:600;">Куртка</div><div style="font-size:5.5px;color:#111;font-weight:700;margin-top:1px;">8 490 ₽</div></div>
+                                    </div>
+                                    <div style="background:#fff;border-radius:4px;overflow:hidden;">
+                                        <div style="height:36px;background:linear-gradient(135deg,#1a1a2e,#16213e);"></div>
+                                        <div style="padding:4px;"><div style="font-size:5.5px;color:#333;font-weight:600;">Свитер</div><div style="font-size:5.5px;color:#111;font-weight:700;margin-top:1px;">4 290 ₽</div></div>
+                                    </div>
+                                    <div style="background:#fff;border-radius:4px;overflow:hidden;">
+                                        <div style="height:36px;background:linear-gradient(135deg,#667eea,#764ba2);"></div>
+                                        <div style="padding:4px;"><div style="font-size:5.5px;color:#333;font-weight:600;">Брюки</div><div style="font-size:5.5px;color:#111;font-weight:700;margin-top:1px;">5 990 ₽</div></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="wcard-info">
-                    <div class="wcard-tag">Веб-приложение</div>
-                    <h3>FlowCRM — CRM-дашборд</h3>
-                    <p>SPA-приложение аналитики продаж с realtime-графиками, управлением командой и автоматическими отчётами.</p>
-                    <div class="wcard-tech"><span>React</span><span>Recharts</span><span>Node.js</span></div>
+                <div class="wc-info">
+                    <div class="wc-tag">Интернет-магазин</div>
+                    <h3>UrbanThreads</h3>
+                    <p>Магазин одежды с 2 500+ позиций. Интеграция с 1С. Оборот <strong>4.2 млн ₽</strong> в первый месяц.</p>
+                    <div class="wc-chips"><span>Next.js</span><span>Stripe</span><span>1С</span></div>
                 </div>
             </div>
 
-            <!-- Work 5 — Landing 2 -->
-            <div class="wcard wcard-wide" data-cat="landing">
-                <div class="wcard-screen">
-                    <div class="mockup-browser">
-                        <div class="mb-bar"><span></span><span></span><span></span></div>
-                        <div class="mb-body site-fitness">
-                            <div class="sf-hero">
-                                <div class="sf-hero-bg"></div>
-                                <div class="sf-content">
-                                    <div class="sf-tag"></div>
-                                    <div class="sf-h1"></div>
-                                    <div class="sf-h2"></div>
-                                    <div class="sf-cta-row"><div class="sf-btn"></div><div class="sf-play"><div class="sf-play-icon">▶</div></div></div>
+            <!-- 3: Corporate -->
+            <div class="wc" data-cat="corp">
+                <div class="wc-preview">
+                    <div class="preview-browser">
+                        <div class="pb-bar"><span></span><span></span><span></span><div class="pb-url">investgroup.ru</div></div>
+                        <div class="pb-body" style="background:#020B18;">
+                            <div style="padding:10px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(14,165,233,0.12);">
+                                <div style="display:flex;align-items:center;gap:6px;">
+                                    <div style="width:16px;height:16px;background:linear-gradient(135deg,#0EA5E9,#22D3EE);border-radius:3px;"></div>
+                                    <div style="font-size:8px;font-weight:700;color:#fff;letter-spacing:1px;">INVEST<span style="color:#0EA5E9;">GROUP</span></div>
                                 </div>
-                                <div class="sf-mockup-phone">
-                                    <div class="sf-phone-screen"></div>
+                                <div style="display:flex;gap:12px;">
+                                    <div style="font-size:6px;color:rgba(255,255,255,0.5);">О компании</div>
+                                    <div style="font-size:6px;color:rgba(255,255,255,0.5);">Стратегия</div>
+                                    <div style="font-size:6px;color:rgba(255,255,255,0.5);">Инвесторам</div>
+                                    <div style="font-size:6px;color:rgba(255,255,255,0.5);">Контакты</div>
                                 </div>
                             </div>
-                            <div class="sf-features"><div class="sf-feat"></div><div class="sf-feat"></div><div class="sf-feat"></div></div>
+                            <div style="padding:18px 16px;">
+                                <div style="font-size:6px;color:#0EA5E9;letter-spacing:3px;text-transform:uppercase;margin-bottom:6px;">Инвестиционный холдинг</div>
+                                <div style="font-size:14px;font-weight:700;color:#fff;line-height:1.25;margin-bottom:8px;">Капитал, который<br><span style="color:#0EA5E9;">работает на будущее</span></div>
+                                <div style="font-size:6.5px;color:rgba(255,255,255,0.45);max-width:160px;line-height:1.5;margin-bottom:12px;">Управляем активами в 12 странах. Портфель — $2.4 млрд.</div>
+                                <div style="display:flex;gap:8px;">
+                                    <div style="padding:5px 12px;background:#0EA5E9;border-radius:3px;font-size:6.5px;font-weight:600;color:#fff;">Инвесторам</div>
+                                    <div style="padding:5px 12px;border:1px solid rgba(14,165,233,0.3);border-radius:3px;font-size:6.5px;color:#0EA5E9;">О нас</div>
+                                </div>
+                            </div>
+                            <div style="display:flex;border-top:1px solid rgba(14,165,233,0.08);padding:10px 16px;gap:0;">
+                                <div style="flex:1;text-align:center;padding:4px;border-right:1px solid rgba(14,165,233,0.08);">
+                                    <div style="font-size:11px;font-weight:700;color:#0EA5E9;">$2.4B</div>
+                                    <div style="font-size:5.5px;color:rgba(255,255,255,0.35);margin-top:2px;">Активы под управлением</div>
+                                </div>
+                                <div style="flex:1;text-align:center;padding:4px;border-right:1px solid rgba(14,165,233,0.08);">
+                                    <div style="font-size:11px;font-weight:700;color:#0EA5E9;">12</div>
+                                    <div style="font-size:5.5px;color:rgba(255,255,255,0.35);margin-top:2px;">Стран присутствия</div>
+                                </div>
+                                <div style="flex:1;text-align:center;padding:4px;">
+                                    <div style="font-size:11px;font-weight:700;color:#0EA5E9;">18%</div>
+                                    <div style="font-size:5.5px;color:rgba(255,255,255,0.35);margin-top:2px;">Средняя доходность</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="wcard-info">
-                    <div class="wcard-tag">Лендинг</div>
-                    <h3>FitPulse — Фитнес-приложение</h3>
-                    <p>Лендинг для мобильного приложения с анимированными демонстрациями экранов, видео-секцией и онлайн-записью. CTR вырос на 67%.</p>
-                    <div class="wcard-tech"><span>Figma</span><span>GSAP</span><span>Lottie</span></div>
+                <div class="wc-info">
+                    <div class="wc-tag">Корпоративный</div>
+                    <h3>InvestGroup Holding</h3>
+                    <p>Корпоративный сайт инвестиционного холдинга. Мультиязычность, IR-портал, Битрикс24.</p>
+                    <div class="wc-chips"><span>React</span><span>i18n</span><span>Bitrix24</span></div>
+                </div>
+            </div>
+
+            <!-- 4: Dashboard app -->
+            <div class="wc" data-cat="app">
+                <div class="wc-preview">
+                    <div class="preview-browser">
+                        <div class="pb-bar"><span></span><span></span><span></span><div class="pb-url">flowcrm.app</div></div>
+                        <div class="pb-body" style="background:#0F1117;display:flex;min-height:180px;">
+                            <div style="width:48px;background:#080B10;border-right:1px solid rgba(255,255,255,0.05);padding:10px 8px;display:flex;flex-direction:column;gap:6px;align-items:center;">
+                                <div style="width:24px;height:24px;background:#0EA5E9;border-radius:6px;margin-bottom:6px;"></div>
+                                <div style="width:20px;height:6px;background:#0EA5E9;border-radius:3px;"></div>
+                                <div style="width:20px;height:6px;background:rgba(255,255,255,0.1);border-radius:3px;"></div>
+                                <div style="width:20px;height:6px;background:rgba(255,255,255,0.1);border-radius:3px;"></div>
+                                <div style="width:20px;height:6px;background:rgba(255,255,255,0.1);border-radius:3px;"></div>
+                            </div>
+                            <div style="flex:1;padding:12px;overflow:hidden;">
+                                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                    <div style="font-size:9px;font-weight:700;color:#fff;">Аналитика продаж</div>
+                                    <div style="display:flex;gap:4px;">
+                                        <div style="padding:2px 8px;background:rgba(14,165,233,0.15);border:1px solid rgba(14,165,233,0.3);border-radius:3px;font-size:5.5px;color:#0EA5E9;">Неделя</div>
+                                        <div style="padding:2px 8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:3px;font-size:5.5px;color:rgba(255,255,255,0.4);">Месяц</div>
+                                    </div>
+                                </div>
+                                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px;">
+                                    <div style="background:rgba(14,165,233,0.1);border:1px solid rgba(14,165,233,0.2);border-radius:6px;padding:8px;">
+                                        <div style="font-size:6px;color:rgba(255,255,255,0.4);margin-bottom:3px;">Выручка</div>
+                                        <div style="font-size:11px;font-weight:700;color:#0EA5E9;">4.2M ₽</div>
+                                        <div style="font-size:5.5px;color:#10B981;margin-top:2px;">+23% к прошлой нед.</div>
+                                    </div>
+                                    <div style="background:rgba(34,211,238,0.08);border:1px solid rgba(34,211,238,0.15);border-radius:6px;padding:8px;">
+                                        <div style="font-size:6px;color:rgba(255,255,255,0.4);margin-bottom:3px;">Сделки</div>
+                                        <div style="font-size:11px;font-weight:700;color:#22D3EE;">148</div>
+                                        <div style="font-size:5.5px;color:#10B981;margin-top:2px;">+12 новых</div>
+                                    </div>
+                                    <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.15);border-radius:6px;padding:8px;">
+                                        <div style="font-size:6px;color:rgba(255,255,255,0.4);margin-bottom:3px;">Конверсия</div>
+                                        <div style="font-size:11px;font-weight:700;color:#10B981;">34.6%</div>
+                                        <div style="font-size:5.5px;color:#10B981;margin-top:2px;">+5.2 пп</div>
+                                    </div>
+                                </div>
+                                <div style="height:52px;display:flex;align-items:flex-end;gap:3px;padding:0 2px;">
+                                    <div style="flex:1;height:35%;background:linear-gradient(to top,#0EA5E9,#22D3EE);border-radius:2px 2px 0 0;opacity:0.7;"></div>
+                                    <div style="flex:1;height:55%;background:linear-gradient(to top,#0EA5E9,#22D3EE);border-radius:2px 2px 0 0;opacity:0.8;"></div>
+                                    <div style="flex:1;height:45%;background:linear-gradient(to top,#0EA5E9,#22D3EE);border-radius:2px 2px 0 0;opacity:0.7;"></div>
+                                    <div style="flex:1;height:75%;background:linear-gradient(to top,#0EA5E9,#22D3EE);border-radius:2px 2px 0 0;"></div>
+                                    <div style="flex:1;height:60%;background:linear-gradient(to top,#0EA5E9,#22D3EE);border-radius:2px 2px 0 0;opacity:0.85;"></div>
+                                    <div style="flex:1;height:90%;background:linear-gradient(to top,#0EA5E9,#22D3EE);border-radius:2px 2px 0 0;"></div>
+                                    <div style="flex:1;height:70%;background:linear-gradient(to top,#0EA5E9,#22D3EE);border-radius:2px 2px 0 0;opacity:0.85;"></div>
+                                </div>
+                                <div style="display:flex;justify-content:space-between;margin-top:3px;padding:0 2px;">
+                                    <div style="font-size:5px;color:rgba(255,255,255,0.25);">Пн</div>
+                                    <div style="font-size:5px;color:rgba(255,255,255,0.25);">Вт</div>
+                                    <div style="font-size:5px;color:rgba(255,255,255,0.25);">Ср</div>
+                                    <div style="font-size:5px;color:rgba(255,255,255,0.25);">Чт</div>
+                                    <div style="font-size:5px;color:rgba(255,255,255,0.25);">Пт</div>
+                                    <div style="font-size:5px;color:rgba(255,255,255,0.25);">Сб</div>
+                                    <div style="font-size:5px;color:rgba(255,255,255,0.25);">Вс</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wc-info">
+                    <div class="wc-tag">Веб-приложение</div>
+                    <h3>FlowCRM Dashboard</h3>
+                    <p>SPA-дашборд для отдела продаж. Realtime-графики, воронка, управление командой.</p>
+                    <div class="wc-chips"><span>React</span><span>Recharts</span><span>Node.js</span></div>
+                </div>
+            </div>
+
+            <!-- 5: Fitness landing wide -->
+            <div class="wc wc-lg" data-cat="landing">
+                <div class="wc-preview">
+                    <div class="preview-browser">
+                        <div class="pb-bar"><span></span><span></span><span></span><div class="pb-url">fitpulse.app</div></div>
+                        <div class="pb-body" style="background:#04090D;">
+                            <div style="padding:10px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(20,240,80,0.08);">
+                                <div style="display:flex;align-items:center;gap:6px;">
+                                    <div style="width:18px;height:18px;background:#14F050;border-radius:4px;display:flex;align-items:center;justify-content:center;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><polyline points="1,6 3,3 5,7 7,2 9,5" stroke="#04090D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                    <div style="font-size:8px;font-weight:700;color:#fff;">Fit<span style="color:#14F050;">Pulse</span></div>
+                                </div>
+                                <div style="display:flex;gap:12px;">
+                                    <div style="font-size:6px;color:rgba(255,255,255,0.45);">Тренировки</div>
+                                    <div style="font-size:6px;color:rgba(255,255,255,0.45);">Питание</div>
+                                    <div style="font-size:6px;color:rgba(255,255,255,0.45);">Цены</div>
+                                </div>
+                                <div style="padding:4px 10px;background:#14F050;border-radius:3px;font-size:6px;font-weight:700;color:#04090D;">Начать</div>
+                            </div>
+                            <div style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:0;min-height:140px;">
+                                <div style="padding:18px 18px;display:flex;flex-direction:column;justify-content:center;gap:8px;">
+                                    <div style="display:inline-flex;align-items:center;gap:5px;padding:3px 8px;background:rgba(20,240,80,0.1);border:1px solid rgba(20,240,80,0.2);border-radius:20px;width:fit-content;">
+                                        <div style="width:5px;height:5px;border-radius:50%;background:#14F050;"></div>
+                                        <div style="font-size:6px;color:#14F050;font-weight:600;">Новое приложение</div>
+                                    </div>
+                                    <div style="font-size:15px;font-weight:800;color:#fff;line-height:1.15;">Тренируйся умнее.<br><span style="color:#14F050;">Расти быстрее.</span></div>
+                                    <div style="font-size:6.5px;color:rgba(255,255,255,0.4);line-height:1.5;max-width:150px;">Персональные планы, отслеживание прогресса и коучинг на основе данных</div>
+                                    <div style="display:flex;align-items:center;gap:8px;margin-top:4px;">
+                                        <div style="padding:5px 14px;background:#14F050;border-radius:4px;font-size:7px;font-weight:700;color:#04090D;">Скачать бесплатно</div>
+                                        <div style="display:flex;align-items:center;gap:4px;font-size:6.5px;color:rgba(255,255,255,0.4);"><svg width="10" height="10" viewBox="0 0 10 10" fill="rgba(255,255,255,0.3)"><polygon points="2,1 9,5 2,9"/></svg>Смотреть видео</div>
+                                    </div>
+                                    <div style="display:flex;gap:12px;margin-top:4px;">
+                                        <div style="text-align:left;"><div style="font-size:9px;font-weight:700;color:#14F050;">50K+</div><div style="font-size:5.5px;color:rgba(255,255,255,0.3);">Пользователей</div></div>
+                                        <div style="text-align:left;"><div style="font-size:9px;font-weight:700;color:#14F050;">4.9</div><div style="font-size:5.5px;color:rgba(255,255,255,0.3);">Рейтинг</div></div>
+                                        <div style="text-align:left;"><div style="font-size:9px;font-weight:700;color:#14F050;">200+</div><div style="font-size:5.5px;color:rgba(255,255,255,0.3);">Упражнений</div></div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;align-items:center;justify-content:center;padding:12px;position:relative;">
+                                    <div style="width:55px;height:100px;background:linear-gradient(160deg,#0D1F14,#0A2016);border:1px solid rgba(20,240,80,0.2);border-radius:10px;box-shadow:0 0 30px rgba(20,240,80,0.15),0 0 60px rgba(20,240,80,0.05);display:flex;flex-direction:column;overflow:hidden;animation:phoneFloat 3s ease-in-out infinite;">
+                                        <div style="height:5px;background:rgba(20,240,80,0.1);display:flex;align-items:center;justify-content:center;"><div style="width:12px;height:2px;background:rgba(255,255,255,0.2);border-radius:1px;"></div></div>
+                                        <div style="flex:1;padding:5px;">
+                                            <div style="font-size:5px;color:rgba(255,255,255,0.4);margin-bottom:3px;">Сегодня</div>
+                                            <div style="font-size:6px;font-weight:700;color:#14F050;margin-bottom:4px;">Грудь + Трицепс</div>
+                                            <div style="display:flex;flex-direction:column;gap:2px;">
+                                                <div style="display:flex;align-items:center;justify-content:space-between;"><div style="font-size:5px;color:rgba(255,255,255,0.5);">Жим лёжа</div><div style="font-size:5px;color:#14F050;">4×12</div></div>
+                                                <div style="display:flex;align-items:center;justify-content:space-between;"><div style="font-size:5px;color:rgba(255,255,255,0.5);">Разводка</div><div style="font-size:5px;color:#14F050;">3×15</div></div>
+                                                <div style="display:flex;align-items:center;justify-content:space-between;"><div style="font-size:5px;color:rgba(255,255,255,0.5);">Трицепс</div><div style="font-size:5px;color:#14F050;">3×12</div></div>
+                                            </div>
+                                            <div style="margin-top:6px;height:3px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;"><div style="width:65%;height:100%;background:#14F050;border-radius:2px;"></div></div>
+                                            <div style="font-size:5px;color:rgba(255,255,255,0.3);margin-top:2px;">65% выполнено</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:flex;border-top:1px solid rgba(20,240,80,0.06);padding:8px 18px;gap:0;">
+                                <div style="flex:1;text-align:center;padding:4px;border-right:1px solid rgba(20,240,80,0.06);">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin:0 auto 3px;"><path d="M6 1L7.2 4H11L8.1 6.2L9 10L6 8L3 10L3.9 6.2L1 4H4.8Z" fill="rgba(20,240,80,0.7)"/></svg>
+                                    <div style="font-size:6px;color:rgba(255,255,255,0.4);">Достижения</div>
+                                </div>
+                                <div style="flex:1;text-align:center;padding:4px;border-right:1px solid rgba(20,240,80,0.06);">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin:0 auto 3px;"><polyline points="1,8 4,5 6,7 9,3 11,5" stroke="rgba(20,240,80,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <div style="font-size:6px;color:rgba(255,255,255,0.4);">Прогресс</div>
+                                </div>
+                                <div style="flex:1;text-align:center;padding:4px;">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin:0 auto 3px;"><circle cx="6" cy="4" r="2.5" stroke="rgba(20,240,80,0.7)" stroke-width="1.2"/><path d="M1 11c0-2.8 2.2-5 5-5s5 2.2 5 5" stroke="rgba(20,240,80,0.7)" stroke-width="1.2"/></svg>
+                                    <div style="font-size:6px;color:rgba(255,255,255,0.4);">Коуч</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wc-info">
+                    <div class="wc-tag">Лендинг + App</div>
+                    <h3>FitPulse</h3>
+                    <p>Лендинг для фитнес-приложения с демо экранов и онлайн-записью к тренеру. CTR вырос на <strong>67%</strong>.</p>
+                    <div class="wc-chips"><span>GSAP</span><span>Lottie</span><span>Figma</span></div>
                 </div>
             </div>
 
@@ -372,187 +622,86 @@
     </div>
 </section>
 
-<!-- ==================== WHY US ==================== -->
-<section class="why section" id="why">
+<!-- ===== WHY ===== -->
+<section class="sec why" id="why">
     <div class="container">
         <div class="why-grid">
             <div class="why-left">
                 <div class="stag">Почему мы</div>
-                <h2 class="sh2">Шесть причин <em>выбрать</em> Hexa</h2>
-                <p class="why-desc">Мы не просто рисуем красивые картинки — мы делаем бизнес-инструменты, которые окупаются.</p>
-                <a href="#contacts" class="btn-glow magnetic" data-magnetic>Начать проект</a>
+                <h2 class="sh2">Причины выбрать <em>Hexa</em></h2>
+                <p class="why-sub">Не просто красивый сайт — инструмент, который приносит деньги.</p>
+                <a href="#contacts" class="btn-blue" data-magnetic>Начать проект</a>
             </div>
-            <div class="why-right">
-                <div class="why-items">
-                    <div class="why-item">
-                        <div class="wi-num">01</div>
-                        <div class="wi-info"><h4>Срок — всегда в дедлайн</h4><p>Работаем по Scrum. Прозрачный трекинг задач. Никаких «ещё чуть-чуть».</p></div>
-                    </div>
-                    <div class="why-item">
-                        <div class="wi-num">02</div>
-                        <div class="wi-info"><h4>Дизайн с конверсией в ДНК</h4><p>Каждый элемент проверяется на пользу для продаж, не только красоту.</p></div>
-                    </div>
-                    <div class="why-item">
-                        <div class="wi-num">03</div>
-                        <div class="wi-info"><h4>Один менеджер на весь проект</h4><p>Без потерянных сообщений и «я узнаю у коллеги». Один контакт — полная ответственность.</p></div>
-                    </div>
-                    <div class="why-item">
-                        <div class="wi-num">04</div>
-                        <div class="wi-info"><h4>Поддержка 12 месяцев</h4><p>Гарантийное сопровождение бесплатно. Правки, хостинг, обновления — с нами надолго.</p></div>
-                    </div>
-                    <div class="why-item">
-                        <div class="wi-num">05</div>
-                        <div class="wi-info"><h4>Скорость загрузки 95+</h4><p>PageSpeed Insights ≥95 на мобилке. Быстрый сайт — это деньги, а не прихоть.</p></div>
-                    </div>
-                    <div class="why-item">
-                        <div class="wi-num">06</div>
-                        <div class="wi-info"><h4>NDA и защита данных</h4><p>Подписываем NDA по запросу. Ваши макеты и данные никогда не уйдут на сторону.</p></div>
-                    </div>
-                </div>
+            <div class="why-items">
+                <div class="wi"><span class="wi-n">01</span><div class="wi-body"><h4>Сроки — всегда в дедлайн</h4><p>Scrum, прозрачный трекинг. Никаких «ещё немного».</p></div></div>
+                <div class="wi"><span class="wi-n">02</span><div class="wi-body"><h4>Конверсия в ДНК дизайна</h4><p>Каждый элемент проверяется на пользу для продаж.</p></div></div>
+                <div class="wi"><span class="wi-n">03</span><div class="wi-body"><h4>Один менеджер — вся ответственность</h4><p>Никаких потерянных сообщений. Один контакт.</p></div></div>
+                <div class="wi"><span class="wi-n">04</span><div class="wi-body"><h4>Поддержка 12 месяцев</h4><p>Гарантийное сопровождение бесплатно после сдачи.</p></div></div>
+                <div class="wi"><span class="wi-n">05</span><div class="wi-body"><h4>PageSpeed 95+ на мобилке</h4><p>Быстрый сайт — это выручка, а не опция.</p></div></div>
+                <div class="wi"><span class="wi-n">06</span><div class="wi-body"><h4>NDA и защита данных</h4><p>Подписываем по запросу. Ваши макеты — только ваши.</p></div></div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ==================== PROCESS ==================== -->
-<section class="process section" id="process">
+<!-- ===== PROCESS ===== -->
+<section class="sec process" id="process">
     <div class="container">
-        <div class="section-top">
-            <div class="stag">Как работаем</div>
+        <div class="sec-head">
+            <div class="stag">Процесс</div>
             <h2 class="sh2">От идеи до <em>запуска</em></h2>
         </div>
-        <div class="process-track">
-            <div class="proc-line"></div>
-            <div class="proc-step">
-                <div class="proc-dot"><span>01</span></div>
-                <div class="proc-card">
-                    <h4>Бриф и анализ</h4>
-                    <p>Заполняете бриф → мы анализируем рынок, конкурентов и ЦА. Формируем ТЗ.</p>
-                    <div class="proc-time">1–2 дня</div>
-                </div>
-            </div>
-            <div class="proc-step">
-                <div class="proc-dot"><span>02</span></div>
-                <div class="proc-card">
-                    <h4>Прототип & Дизайн</h4>
-                    <p>Wireframe → UI-дизайн в Figma. 2 круга правок включены. Вы видите сайт до старта разработки.</p>
-                    <div class="proc-time">5–10 дней</div>
-                </div>
-            </div>
-            <div class="proc-step">
-                <div class="proc-dot"><span>03</span></div>
-                <div class="proc-card">
-                    <h4>Разработка</h4>
-                    <p>Верстаем, пишем код, подключаем CMS, интеграции. Еженедельные демо-ссылки для проверки.</p>
-                    <div class="proc-time">7–21 день</div>
-                </div>
-            </div>
-            <div class="proc-step">
-                <div class="proc-dot"><span>04</span></div>
-                <div class="proc-card">
-                    <h4>Тестирование</h4>
-                    <p>Кросс-браузерное тестирование, оптимизация PageSpeed, правки. Сдача по чек-листу из 80 пунктов.</p>
-                    <div class="proc-time">2–3 дня</div>
-                </div>
-            </div>
-            <div class="proc-step">
-                <div class="proc-dot"><span>05</span></div>
-                <div class="proc-card">
-                    <h4>Запуск & Поддержка</h4>
-                    <p>Деплой на ваш хостинг. Обучаем работе с CMS. Берём на поддержку на 12 месяцев.</p>
-                    <div class="proc-time">1 день</div>
-                </div>
-            </div>
+        <div class="proc-grid">
+            <div class="pc"><div class="pc-num">01</div><h4>Бриф и анализ</h4><p>Изучаем задачу, анализируем рынок и конкурентов. Составляем чёткое ТЗ.</p><div class="pc-time">1–2 дня</div></div>
+            <div class="pc"><div class="pc-num">02</div><h4>Дизайн в Figma</h4><p>Wireframe → UI-макет. Два круга правок включены. Видите сайт до кода.</p><div class="pc-time">5–10 дней</div></div>
+            <div class="pc"><div class="pc-num">03</div><h4>Разработка</h4><p>Верстаем, подключаем CMS и интеграции. Еженедельные демо-ссылки.</p><div class="pc-time">7–21 день</div></div>
+            <div class="pc"><div class="pc-num">04</div><h4>Тест и запуск</h4><p>Кросс-браузерное тестирование, оптимизация PageSpeed, деплой.</p><div class="pc-time">2–3 дня</div></div>
         </div>
     </div>
 </section>
 
-<!-- ==================== REVIEWS ==================== -->
-<section class="reviews section">
+<!-- ===== CTA ===== -->
+<section class="cta-sec">
     <div class="container">
-        <div class="section-top">
-            <div class="stag">Отзывы</div>
-            <h2 class="sh2">Что говорят <em>клиенты</em></h2>
-        </div>
-        <div class="reviews-grid">
-            <div class="review-card tilt-card" data-tilt>
-                <div class="rc-stars">★★★★★</div>
-                <p>«Hexa Studio сделали нам лендинг за 12 дней. Конверсия выросла с 1.2% до 4.8%. Такого результата не ожидали даже мы.»</p>
-                <div class="rc-author">
-                    <div class="rc-avatar rc-av-1">АК</div>
-                    <div><strong>Алексей Карпов</strong><span>CEO, TechStart</span></div>
-                </div>
-            </div>
-            <div class="review-card tilt-card" data-tilt>
-                <div class="rc-stars">★★★★★</div>
-                <p>«Магазин запустили за 3 недели. Дизайн — огонь. С первого месяца оборот 4.2 млн ₽. Команда всегда на связи, правки вносят быстро.»</p>
-                <div class="rc-author">
-                    <div class="rc-avatar rc-av-2">МС</div>
-                    <div><strong>Марина Сидорова</strong><span>Founder, UrbanThreads</span></div>
-                </div>
-            </div>
-            <div class="review-card tilt-card" data-tilt>
-                <div class="rc-stars">★★★★★</div>
-                <p>«Наш корпоративный сайт получил награду на Awwwards. Ребята действительно понимают, что такое качество. Рекомендую без оговорок.»</p>
-                <div class="rc-author">
-                    <div class="rc-avatar rc-av-3">ДВ</div>
-                    <div><strong>Дмитрий Волков</strong><span>CMO, InvestGroup</span></div>
-                </div>
-            </div>
+        <div class="cta-box">
+            <div class="cta-glow"></div>
+            <h2>Готовы запустить проект?</h2>
+            <p>Расскажите задачу — рассчитаем стоимость и сроки бесплатно за 24 часа.</p>
+            <a href="#contacts" class="btn-blue" data-magnetic>Получить расчёт →</a>
         </div>
     </div>
 </section>
 
-<!-- ==================== CTA BANNER ==================== -->
-<section class="cta-banner section">
+<!-- ===== CONTACTS ===== -->
+<section class="sec contacts" id="contacts">
     <div class="container">
-        <div class="cta-inner">
-            <div class="cta-bg-glow"></div>
-            <div class="cta-text">
-                <h2>Готовы к запуску?</h2>
-                <p>Расскажите о вашем проекте — рассчитаем стоимость и сроки бесплатно за 24 часа.</p>
-            </div>
-            <a href="#contacts" class="btn-glow magnetic" data-magnetic>Получить расчёт →</a>
-        </div>
-    </div>
-</section>
-
-<!-- ==================== CONTACTS ==================== -->
-<section class="contacts section" id="contacts">
-    <div class="container">
-        <div class="contacts-grid">
-            <div class="contacts-left">
+        <div class="ct-grid">
+            <div class="ct-left">
                 <div class="stag">Контакты</div>
                 <h2 class="sh2">Напишите <em>нам</em></h2>
-                <p class="contacts-desc">Обсудим задачу, предложим решение и расскажем цены — бесплатно и без давления.</p>
-                <div class="contact-links">
-                    <a href="https://t.me/yourusername" class="contact-link contact-link--tg" target="_blank" rel="noopener">
+                <p class="ct-sub">Обсудим задачу, предложим решение и цены — бесплатно и без давления.</p>
+                <div class="ct-links">
+                    <a href="https://t.me/yourusername" class="ct-link ct-tg" target="_blank" rel="noopener">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.93 4.23L19.46 20.35C19.28 21.16 18.79 21.35 18.11 20.97L14.38 18.23L12.58 19.96C12.38 20.16 12.22 20.32 11.85 20.32L12.12 16.5L19.06 10.23C19.36 9.96 18.99 9.8 18.6 10.06L10.02 15.46L6.34 14.31C5.54 14.06 5.52 13.51 6.5 13.13L20.89 7.59C21.56 7.34 22.14 7.74 21.93 4.23Z"/></svg>
                         Telegram
                     </a>
-                    <a href="https://wa.me/79000000000" class="contact-link contact-link--wa" target="_blank" rel="noopener">
+                    <a href="https://wa.me/79000000000" class="ct-link ct-wa" target="_blank" rel="noopener">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.91C17.18 3.03 14.69 2 12.04 2C6.53 2 2.04 6.49 2.04 12C2.04 13.76 2.5 15.45 3.36 16.94L2 22L7.17 20.64C8.61 21.43 10.29 21.84 12.03 21.84H12.04C17.55 21.84 22.04 17.35 22.04 11.84C22.04 9.18 21.01 6.68 19.05 4.91Z"/></svg>
                         WhatsApp
                     </a>
-                    <a href="mailto:hello@hexastudio.dev" class="contact-link contact-link--mail">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7l10 7 10-7"/></svg>
+                    <a href="mailto:hello@hexastudio.dev" class="ct-link ct-mail">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
                         hello@hexastudio.dev
                     </a>
                 </div>
             </div>
-            <div class="contacts-right">
-                <form class="contact-form" id="contactForm">
-                    <div class="form-row">
-                        <div class="form-field">
-                            <label>Имя</label>
-                            <input type="text" placeholder="Ваше имя" required>
-                        </div>
-                        <div class="form-field">
-                            <label>Телефон / TG</label>
-                            <input type="text" placeholder="+7 900 000 00 00">
-                        </div>
+            <div class="ct-right">
+                <form class="ct-form" id="ctForm">
+                    <div class="cf-row">
+                        <div class="cf-f"><label>Имя</label><input type="text" placeholder="Ваше имя" required></div>
+                        <div class="cf-f"><label>Телефон / TG</label><input type="text" placeholder="+7 900 000 00 00"></div>
                     </div>
-                    <div class="form-field">
+                    <div class="cf-f">
                         <label>Тип проекта</label>
                         <select>
                             <option value="">Выберите тип</option>
@@ -564,59 +713,32 @@
                             <option>Другое</option>
                         </select>
                     </div>
-                    <div class="form-field">
-                        <label>Расскажите о проекте</label>
-                        <textarea placeholder="Что нужно сделать? Есть ли референсы? Какой бюджет?" rows="4"></textarea>
-                    </div>
-                    <button type="submit" class="btn-glow form-submit">Отправить заявку</button>
+                    <div class="cf-f"><label>О проекте</label><textarea rows="4" placeholder="Что нужно сделать? Есть ли референсы? Бюджет?"></textarea></div>
+                    <button type="submit" class="btn-blue cf-submit">Отправить заявку</button>
                 </form>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ==================== FOOTER ==================== -->
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
-    <div class="container footer-wrap">
-        <div class="footer-brand">
-            <a href="#" class="logo">
-                <svg class="logo-hex-icon" viewBox="0 0 36 42" fill="none">
-                    <polygon points="18,2 34,11 34,31 18,40 2,31 2,11" stroke="url(#footerGrad)" stroke-width="2.5"/>
-                    <defs><linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#A855F7"/><stop offset="100%" stop-color="#22D3EE"/></linearGradient></defs>
-                </svg>
-                Hexa<span>Studio</span>
-            </a>
-            <p>Создаём сайты, которые продают.</p>
+    <div class="container ft-inner">
+        <a href="#" class="logo">
+            <svg viewBox="0 0 32 37" fill="none" class="logo-svg">
+                <polygon points="16,2 30,10 30,27 16,35 2,27 2,10" stroke="url(#ftg)" stroke-width="2.2" fill="none"/>
+                <defs><linearGradient id="ftg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0EA5E9"/><stop offset="100%" stop-color="#22D3EE"/></linearGradient></defs>
+            </svg>
+            Hexa<span>Studio</span>
+        </a>
+        <p class="ft-copy">&copy; 2026 Hexa Studio. Создаём сайты, которые работают.</p>
+        <div class="ft-links">
+            <a href="https://t.me/yourusername" target="_blank">TG</a>
+            <a href="https://wa.me/79000000000" target="_blank">WA</a>
         </div>
-        <div class="footer-links">
-            <div class="fl-col">
-                <strong>Услуги</strong>
-                <a href="#services">Лендинги</a>
-                <a href="#services">Магазины</a>
-                <a href="#services">Корпоративные</a>
-                <a href="#services">Веб-приложения</a>
-            </div>
-            <div class="fl-col">
-                <strong>Студия</strong>
-                <a href="#works">Портфолио</a>
-                <a href="#why">О нас</a>
-                <a href="#process">Процесс</a>
-            </div>
-            <div class="fl-col">
-                <strong>Контакты</strong>
-                <a href="https://t.me/yourusername" target="_blank">Telegram</a>
-                <a href="https://wa.me/79000000000" target="_blank">WhatsApp</a>
-                <a href="mailto:hello@hexastudio.dev">Email</a>
-            </div>
-        </div>
-    </div>
-    <div class="container footer-bottom">
-        <p>&copy; 2026 Hexa Studio. Все права защищены.</p>
-        <p>Сделано с ❤️ командой Hexa</p>
     </div>
 </footer>
 
-<!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
