@@ -3,311 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARDigital — AI-Агентство</title>
-    <meta name="description" content="ARDigital — AI-агентство полного цикла. AI-саппорт, Telegram-боты, генерация саммари и другие решения на базе искусственного интеллекта.">
-    
-    <!-- Fonts -->
+    <title>AI Agency | Инновационные ИИ решения</title>
+    <meta name="description" content="AI Agency - разработка AI-саппортов, Telegram-ботов и генераторов саммари. Внедряем нейросети в ваш бизнес.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css">
-
-    <!-- Favicon (placeholder) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <header class="header">
+        <div class="logo">AI<span>Agency</span></div>
+        <nav class="nav">
+            <a href="#about">О нас</a>
+            <a href="#services">Услуги</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </header>
 
-    <!-- ========== NAVIGATION ========== -->
-    <nav class="nav" id="nav">
-        <div class="nav__container">
-            <a href="#" class="nav__logo">
-                <span class="nav__logo-icon">⚡</span>AR<span class="nav__logo-accent">Digital</span>
-            </a>
-            <ul class="nav__menu" id="navMenu">
-                <li><a href="#services" class="nav__link">Услуги</a></li>
-                <li><a href="#about" class="nav__link">О нас</a></li>
-                <li><a href="#contact" class="nav__link">Контакты</a></li>
-            </ul>
-            <div class="nav__actions">
-                <a href="https://t.me/" target="_blank" rel="noopener" class="btn btn--sm btn--ghost">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                    Telegram
-                </a>
-                <a href="#contact" class="btn btn--sm btn--primary">Связаться</a>
+    <main>
+        <!-- Hero Section with Matter.js -->
+        <section class="hero" id="hero">
+            <div id="canvas-container"></div>
+            <!-- DOM elements that will be mapped to Matter.js bodies -->
+            <div id="matter-dom-elements">
+                <div class="floating-item" data-type="circle">AI-Саппорт</div>
+                <div class="floating-item" data-type="rect">TG-Бот</div>
+                <div class="floating-item" data-type="circle">Генератор Саммари</div>
+                <div class="floating-item" data-type="rect">LLM Интеграция</div>
+                <div class="floating-item" data-type="circle">RAG Системы</div>
+                <div class="floating-item" data-type="rect">Автоматизация</div>
             </div>
-            <button class="nav__burger" id="navBurger" aria-label="Меню">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
 
-    <!-- ========== HERO SECTION ========== -->
-    <section class="hero" id="hero">
-        <canvas id="matterCanvas"></canvas>
-        <div class="hero__overlay"></div>
-        <div class="hero__content">
-            <div class="hero__badge animate-fade-up">
-                <span class="hero__badge-dot"></span>
-                AI-агентство нового поколения
+            <div class="hero-content">
+                <h1 class="hero-title">Будущее уже <span>здесь</span></h1>
+                <p class="hero-subtitle">Мы внедряем передовые AI-решения, чтобы ваш бизнес летел в космос.</p>
+                <a href="#contacts" class="btn btn-primary">Обсудить проект</a>
             </div>
-            <h1 class="hero__title animate-fade-up delay-1">
-                Автоматизируем бизнес<br>
-                с помощью <span class="text-gradient">искусственного интеллекта</span>
-            </h1>
-            <p class="hero__subtitle animate-fade-up delay-2">
-                Разрабатываем AI-решения, которые берут рутину на себя — 
-                от умных ботов до аналитических систем полного цикла
-            </p>
-            <div class="hero__cta animate-fade-up delay-3">
-                <a href="#contact" class="btn btn--lg btn--primary">
-                    Начать проект
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-                <a href="#services" class="btn btn--lg btn--ghost">
-                    Наши услуги
-                </a>
+            
+            <div class="scroll-indicator">
+                <span>Скролльте вниз</span>
+                <div class="mouse"></div>
             </div>
-            <div class="hero__stats animate-fade-up delay-4">
-                <div class="hero__stat">
-                    <span class="hero__stat-number">50+</span>
-                    <span class="hero__stat-label">Проектов</span>
-                </div>
-                <div class="hero__stat">
-                    <span class="hero__stat-number">99%</span>
-                    <span class="hero__stat-label">Uptime ботов</span>
-                </div>
-                <div class="hero__stat">
-                    <span class="hero__stat-number">24/7</span>
-                    <span class="hero__stat-label">Поддержка</span>
-                </div>
-            </div>
-        </div>
-        <div class="hero__scroll-indicator">
-            <div class="hero__scroll-mouse">
-                <div class="hero__scroll-dot"></div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ========== SERVICES SECTION ========== -->
-    <section class="section services" id="services">
-        <div class="container">
-            <div class="section__header reveal-text">
-                <span class="section__label">Что мы делаем</span>
-                <h2 class="section__title">Наши <span class="text-gradient">услуги</span></h2>
-                <p class="section__description">
-                    Полный спектр AI-решений для вашего бизнеса — от консультации до внедрения и поддержки
-                </p>
-            </div>
-            <div class="services__grid">
-                <div class="service-card reveal-card">
-                    <div class="service-card__icon" style="--accent: #00f0ff;">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="1.5"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 6v6l4 2"/></svg>
+        <!-- About Section -->
+        <section class="about section-padding gs-reveal" id="about">
+            <div class="container">
+                <h2 class="section-title">Кто мы?</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>Мы — команда энтузиастов и экспертов в области машинного обучения и генеративного ИИ. Наша миссия: избавить вас от рутины и автоматизировать процессы.</p>
+                        <p>Никаких шаблонов — только кастомные решения, которые работают на вас 24/7.</p>
                     </div>
-                    <h3 class="service-card__title">AI-Саппорт</h3>
-                    <p class="service-card__text">Интеллектуальная поддержка клиентов 24/7 с пониманием контекста, эмоций и намерений пользователя</p>
-                    <div class="service-card__tags">
-                        <span>NLP</span><span>GPT</span><span>Мультиязычность</span>
-                    </div>
-                </div>
-                <div class="service-card reveal-card">
-                    <div class="service-card__icon" style="--accent: #b829ff;">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#b829ff" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                    </div>
-                    <h3 class="service-card__title">Telegram-Боты</h3>
-                    <p class="service-card__text">Мощные боты для Telegram: от простых автоответчиков до сложных AI-ассистентов с интеграцией CRM</p>
-                    <div class="service-card__tags">
-                        <span>Telegram API</span><span>Webhook</span><span>CRM</span>
-                    </div>
-                </div>
-                <div class="service-card reveal-card">
-                    <div class="service-card__icon" style="--accent: #39ff14;">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#39ff14" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                    </div>
-                    <h3 class="service-card__title">Генератор Саммари</h3>
-                    <p class="service-card__text">Автоматическая выжимка из встреч, документов и переписок — экономим до 80% времени на аналитику</p>
-                    <div class="service-card__tags">
-                        <span>Summarization</span><span>RAG</span><span>Audio</span>
-                    </div>
-                </div>
-                <div class="service-card reveal-card">
-                    <div class="service-card__icon" style="--accent: #ff6b35;">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" stroke-width="1.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-                    </div>
-                    <h3 class="service-card__title">Voice-Ассистент</h3>
-                    <p class="service-card__text">Голосовые ИИ-ассистенты для телефонии, колл-центров и внутренних коммуникаций компании</p>
-                    <div class="service-card__tags">
-                        <span>STT/TTS</span><span>SIP</span><span>IVR</span>
-                    </div>
-                </div>
-                <div class="service-card reveal-card">
-                    <div class="service-card__icon" style="--accent: #ffd700;">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffd700" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-                    </div>
-                    <h3 class="service-card__title">Smart CRM</h3>
-                    <p class="service-card__text">Умная CRM с AI-предсказаниями: автоматическая сегментация, скоринг лидов и прогноз оттока</p>
-                    <div class="service-card__tags">
-                        <span>Predictive AI</span><span>ML</span><span>Pipeline</span>
-                    </div>
-                </div>
-                <div class="service-card reveal-card">
-                    <div class="service-card__icon" style="--accent: #ff1493;">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff1493" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                    </div>
-                    <h3 class="service-card__title">AI-Аналитика</h3>
-                    <p class="service-card__text">Глубокая аналитика данных с помощью ML: паттерны, аномалии и рекомендации для роста бизнеса</p>
-                    <div class="service-card__tags">
-                        <span>Data Science</span><span>Dashboards</span><span>Insights</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== ABOUT SECTION ========== -->
-    <section class="section about" id="about">
-        <div class="container">
-            <div class="about__grid">
-                <div class="about__content reveal-text">
-                    <span class="section__label">О компании</span>
-                    <h2 class="section__title">Почему <span class="text-gradient">ARDigital?</span></h2>
-                    <p class="about__text">
-                        Мы — команда инженеров и исследователей в области AI, которые превращают 
-                        передовые технологии в реальные бизнес-решения. Не просто интегрируем 
-                        готовые модели — проектируем архитектуру под ваши задачи.
-                    </p>
-                    <div class="about__features">
-                        <div class="about__feature">
-                            <div class="about__feature-icon">🧠</div>
-                            <div>
-                                <h4>Глубокая экспертиза</h4>
-                                <p>Команда из ML-инженеров, NLP-специалистов и Fullstack-разработчиков</p>
-                            </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h3 class="stat-number">99%</h3>
+                            <p>Точность ответов AI</p>
                         </div>
-                        <div class="about__feature">
-                            <div class="about__feature-icon">🚀</div>
-                            <div>
-                                <h4>Быстрый запуск</h4>
-                                <p>От идеи до продакшена за 2-4 недели с помощью наших готовых модулей</p>
-                            </div>
-                        </div>
-                        <div class="about__feature">
-                            <div class="about__feature-icon">🔒</div>
-                            <div>
-                                <h4>Безопасность</h4>
-                                <p>Данные обрабатываются на ваших серверах — полная конфиденциальность</p>
-                            </div>
-                        </div>
-                        <div class="about__feature">
-                            <div class="about__feature-icon">📈</div>
-                            <div>
-                                <h4>Измеримый результат</h4>
-                                <p>Метрики эффективности с первого дня — прозрачная отчётность</p>
-                            </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number">x10</h3>
+                            <p>Ускорение процессов</p>
                         </div>
                     </div>
                 </div>
-                <div class="about__visual reveal-card">
-                    <div class="about__code-block">
-                        <div class="about__code-header">
-                            <div class="about__code-dots">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <span class="about__code-filename">ai_agent.py</span>
-                        </div>
-                        <pre class="about__code"><code><span class="code-keyword">from</span> ardigital <span class="code-keyword">import</span> AIAgent
+            </div>
+        </section>
 
-agent = AIAgent(
-    model=<span class="code-string">"gpt-4-turbo"</span>,
-    tools=[<span class="code-string">"support"</span>, <span class="code-string">"analytics"</span>],
-    language=<span class="code-string">"ru"</span>
-)
-
-<span class="code-comment"># Запуск AI-саппорта за 3 строки</span>
-result = agent.deploy(
-    channel=<span class="code-string">"telegram"</span>,
-    knowledge_base=<span class="code-string">"./docs"</span>
-)
-
-<span class="code-keyword">print</span>(result.status)
-<span class="code-comment"># → 🟢 Active | 24/7 | 99.8% accuracy</span></code></pre>
+        <!-- Services Section -->
+        <section class="services section-padding gs-reveal" id="services">
+            <div class="container">
+                <h2 class="section-title">Наши Услуги</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🤖</div>
+                        <h3>AI-Саппорт</h3>
+                        <p>Умный помощник на базе LLM, который решит 80% вопросов ваших клиентов без участия оператора.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📱</div>
+                        <h3>Telegram-Боты</h3>
+                        <p>Многофункциональные боты для продаж, онбординга и развлечения с интеграцией ChatGPT.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">⚡</div>
+                        <h3>Генератор Саммари</h3>
+                        <p>Автоматическое извлечение главных мыслей из многочасовых созвонов и длинных документов.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ========== CTA / CONTACT SECTION ========== -->
-    <section class="section cta" id="contact">
-        <div class="container">
-            <div class="cta__content reveal-text">
-                <h2 class="cta__title">Готовы внедрить <span class="text-gradient">AI</span> в свой бизнес?</h2>
-                <p class="cta__text">
-                    Напишите нам — обсудим вашу задачу и предложим решение за 24 часа
-                </p>
-                <div class="cta__buttons">
-                    <a href="https://wa.me/79991234567?text=Здравствуйте!%20Хочу%20обсудить%20AI-решение" target="_blank" rel="noopener" class="btn btn--lg btn--whatsapp">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        Написать в WhatsApp
+        <!-- Contacts Section -->
+        <section class="contacts section-padding gs-reveal" id="contacts">
+            <div class="container text-center">
+                <h2 class="section-title">Готовы к взлету?</h2>
+                <p class="contacts-subtitle">Свяжитесь с нами прямо сейчас и получите бесплатную консультацию по внедрению ИИ.</p>
+                <div class="action-buttons">
+                    <a href="#" class="btn btn-tg" onclick="alert('Переход в Telegram-бота'); return false;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.93 4.23L19.46 20.35C19.28 21.16 18.79 21.35 18.11 20.97L14.38 18.23L12.58 19.96C12.38 20.16 12.22 20.32 11.85 20.32L12.12 16.5L19.06 10.23C19.36 9.96 18.99 9.8 18.6 10.06L10.02 15.46L6.34 14.31C5.54 14.06 5.52 13.51 6.5 13.13L20.89 7.59C21.56 7.34 22.14 7.74 21.93 4.23Z" fill="currentColor"/></svg>
+                        Telegram
                     </a>
-                    <a href="https://t.me/ardigital_bot" target="_blank" rel="noopener" class="btn btn--lg btn--telegram">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-                        Открыть Telegram-бота
+                    <a href="#" class="btn btn-wa" onclick="alert('Переход в WhatsApp'); return false;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.05 4.91C17.18 3.03 14.69 2 12.04 2C6.53 2 2.04 6.49 2.04 12C2.04 13.76 2.5 15.45 3.36 16.94L2 22L7.17 20.64C8.61 21.43 10.29 21.84 12.03 21.84H12.04C17.55 21.84 22.04 17.35 22.04 11.84C22.04 9.18 21.01 6.68 19.05 4.91ZM12.04 20.16C10.55 20.16 9.11 19.76 7.87 19.02L7.58 18.85L4.51 19.65L5.33 16.65L5.14 16.34C4.33 15.05 3.9 13.55 3.9 12C3.9 7.52 7.55 3.87 12.04 3.87C14.21 3.87 16.24 4.72 17.77 6.25C19.3 7.78 20.15 9.8 20.15 11.98C20.14 16.47 16.51 20.16 12.04 20.16ZM16.5 14.05C16.25 13.93 15.04 13.33 14.81 13.25C14.59 13.17 14.43 13.13 14.26 13.38C14.1 13.63 13.65 14.16 13.52 14.32C13.38 14.48 13.24 14.5 12.99 14.38C12.75 14.26 11.96 14.01 11.02 13.17C10.29 12.51 9.79 11.7 9.64 11.45C9.49 11.2 9.63 11.06 9.75 10.94C9.86 10.83 10 10.66 10.12 10.52C10.24 10.38 10.29 10.28 10.37 10.11C10.45 9.94 10.41 9.8 10.35 9.68C10.29 9.56 9.79 8.33 9.58 7.83C9.38 7.35 9.17 7.42 9.03 7.41C8.89 7.4 8.73 7.4 8.57 7.4C8.4 7.4 8.14 7.46 7.91 7.7C7.69 7.94 7.03 8.56 7.03 9.81C7.03 11.06 7.95 12.27 8.08 12.44C8.2 12.61 9.87 15.18 12.44 16.29C13.05 16.55 13.53 16.71 13.91 16.83C14.53 17.03 15.08 16.99 15.52 16.92C16.01 16.84 17.07 16.28 17.29 15.66C17.51 15.04 17.51 14.5 17.43 14.38C17.36 14.26 17.2 14.2 16.95 14.08L16.5 14.05Z" fill="currentColor"/></svg>
+                        WhatsApp
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- ========== FOOTER ========== -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer__grid">
-                <div class="footer__brand">
-                    <a href="#" class="footer__logo">
-                        <span class="nav__logo-icon">⚡</span>AR<span class="nav__logo-accent">Digital</span>
-                    </a>
-                    <p class="footer__tagline">AI-агентство полного цикла для автоматизации и роста вашего бизнеса</p>
-                </div>
-                <div class="footer__links">
-                    <h4>Навигация</h4>
-                    <a href="#services">Услуги</a>
-                    <a href="#about">О нас</a>
-                    <a href="#contact">Контакты</a>
-                </div>
-                <div class="footer__links">
-                    <h4>Услуги</h4>
-                    <a href="#services">AI-Саппорт</a>
-                    <a href="#services">Telegram-Боты</a>
-                    <a href="#services">AI-Аналитика</a>
-                </div>
-                <div class="footer__contacts">
-                    <h4>Контакты</h4>
-                    <a href="mailto:info@ardigital.ru">info@ardigital.ru</a>
-                    <a href="https://t.me/ardigital" target="_blank" rel="noopener">Telegram: @ardigital</a>
-                    <a href="https://wa.me/79991234567" target="_blank" rel="noopener">WhatsApp</a>
-                </div>
-            </div>
-            <div class="footer__bottom">
-                <p>&copy; 2026 ARDigital. Все права защищены.</p>
-            </div>
+        <div class="container text-center">
+            <p>&copy; 2026 AI Agency. Все права автоматизированы.</p>
         </div>
     </footer>
 
-    <!-- ========== SCRIPTS ========== -->
-    <!-- Matter.js -->
+    <!-- Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
-    <!-- GSAP + ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
-    <!-- App Scripts -->
-    <script src="js/matter-physics.js"></script>
-    <script src="js/gsap-animations.js"></script>
-    <script src="js/main.js"></script>
+    <!-- Custom Scripts -->
+    <script src="js/app.js"></script>
 </body>
 </html>
