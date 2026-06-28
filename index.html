@@ -3,127 +3,362 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Agency | Инновационные ИИ решения</title>
-    <meta name="description" content="AI Agency - разработка AI-саппортов, Telegram-ботов и генераторов саммари. Внедряем нейросети в ваш бизнес.">
+    <title>Hexa Studio — AI Agency нового поколения</title>
+    <meta name="description" content="Hexa Studio — премиальная AI-студия. Создаём интеллектуальных ботов, автоматизацию и нейросетевые решения для бизнеса.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo">AI<span>Agency</span></div>
-        <nav class="nav">
+
+<!-- Preloader -->
+<div class="preloader" id="preloader">
+    <div class="preloader-inner">
+        <svg class="hexa-logo-loader" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <polygon class="hex-shape" points="50,5 93,27.5 93,72.5 50,95 7,72.5 7,27.5"/>
+        </svg>
+        <span class="preloader-text">HEXA STUDIO</span>
+    </div>
+</div>
+
+<!-- Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+
+<!-- Header -->
+<header class="header" id="header">
+    <div class="header-inner">
+        <a href="#" class="header-logo">
+            <svg class="logo-hex" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="20,2 37,11 37,29 20,38 3,29 3,11"/>
+            </svg>
+            Hexa<span>Studio</span>
+        </a>
+        <nav class="header-nav">
             <a href="#about">О нас</a>
             <a href="#services">Услуги</a>
-            <a href="#contacts">Контакты</a>
+            <a href="#works">Работы</a>
+            <a href="#contacts">Контакт</a>
         </nav>
-    </header>
-
-    <main>
-        <!-- Hero Section with Matter.js -->
-        <section class="hero" id="hero">
-            <div id="canvas-container"></div>
-            <!-- DOM elements that will be mapped to Matter.js bodies -->
-            <div id="matter-dom-elements">
-                <div class="floating-item" data-type="circle">AI-Саппорт</div>
-                <div class="floating-item" data-type="rect">TG-Бот</div>
-                <div class="floating-item" data-type="circle">Генератор Саммари</div>
-                <div class="floating-item" data-type="rect">LLM Интеграция</div>
-                <div class="floating-item" data-type="circle">RAG Системы</div>
-                <div class="floating-item" data-type="rect">Автоматизация</div>
-            </div>
-
-            <div class="hero-content">
-                <h1 class="hero-title">Будущее уже <span>здесь</span></h1>
-                <p class="hero-subtitle">Мы внедряем передовые AI-решения, чтобы ваш бизнес летел в космос.</p>
-                <a href="#contacts" class="btn btn-primary">Обсудить проект</a>
-            </div>
-            
-            <div class="scroll-indicator">
-                <span>Скролльте вниз</span>
-                <div class="mouse"></div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="about section-padding gs-reveal" id="about">
-            <div class="container">
-                <h2 class="section-title">Кто мы?</h2>
-                <div class="about-grid">
-                    <div class="about-text">
-                        <p>Мы — команда энтузиастов и экспертов в области машинного обучения и генеративного ИИ. Наша миссия: избавить вас от рутины и автоматизировать процессы.</p>
-                        <p>Никаких шаблонов — только кастомные решения, которые работают на вас 24/7.</p>
-                    </div>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <h3 class="stat-number">99%</h3>
-                            <p>Точность ответов AI</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3 class="stat-number">x10</h3>
-                            <p>Ускорение процессов</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section class="services section-padding gs-reveal" id="services">
-            <div class="container">
-                <h2 class="section-title">Наши Услуги</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">🤖</div>
-                        <h3>AI-Саппорт</h3>
-                        <p>Умный помощник на базе LLM, который решит 80% вопросов ваших клиентов без участия оператора.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">📱</div>
-                        <h3>Telegram-Боты</h3>
-                        <p>Многофункциональные боты для продаж, онбординга и развлечения с интеграцией ChatGPT.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">⚡</div>
-                        <h3>Генератор Саммари</h3>
-                        <p>Автоматическое извлечение главных мыслей из многочасовых созвонов и длинных документов.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contacts Section -->
-        <section class="contacts section-padding gs-reveal" id="contacts">
-            <div class="container text-center">
-                <h2 class="section-title">Готовы к взлету?</h2>
-                <p class="contacts-subtitle">Свяжитесь с нами прямо сейчас и получите бесплатную консультацию по внедрению ИИ.</p>
-                <div class="action-buttons">
-                    <a href="#" class="btn btn-tg" onclick="alert('Переход в Telegram-бота'); return false;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.93 4.23L19.46 20.35C19.28 21.16 18.79 21.35 18.11 20.97L14.38 18.23L12.58 19.96C12.38 20.16 12.22 20.32 11.85 20.32L12.12 16.5L19.06 10.23C19.36 9.96 18.99 9.8 18.6 10.06L10.02 15.46L6.34 14.31C5.54 14.06 5.52 13.51 6.5 13.13L20.89 7.59C21.56 7.34 22.14 7.74 21.93 4.23Z" fill="currentColor"/></svg>
-                        Telegram
-                    </a>
-                    <a href="#" class="btn btn-wa" onclick="alert('Переход в WhatsApp'); return false;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.05 4.91C17.18 3.03 14.69 2 12.04 2C6.53 2 2.04 6.49 2.04 12C2.04 13.76 2.5 15.45 3.36 16.94L2 22L7.17 20.64C8.61 21.43 10.29 21.84 12.03 21.84H12.04C17.55 21.84 22.04 17.35 22.04 11.84C22.04 9.18 21.01 6.68 19.05 4.91ZM12.04 20.16C10.55 20.16 9.11 19.76 7.87 19.02L7.58 18.85L4.51 19.65L5.33 16.65L5.14 16.34C4.33 15.05 3.9 13.55 3.9 12C3.9 7.52 7.55 3.87 12.04 3.87C14.21 3.87 16.24 4.72 17.77 6.25C19.3 7.78 20.15 9.8 20.15 11.98C20.14 16.47 16.51 20.16 12.04 20.16ZM16.5 14.05C16.25 13.93 15.04 13.33 14.81 13.25C14.59 13.17 14.43 13.13 14.26 13.38C14.1 13.63 13.65 14.16 13.52 14.32C13.38 14.48 13.24 14.5 12.99 14.38C12.75 14.26 11.96 14.01 11.02 13.17C10.29 12.51 9.79 11.7 9.64 11.45C9.49 11.2 9.63 11.06 9.75 10.94C9.86 10.83 10 10.66 10.12 10.52C10.24 10.38 10.29 10.28 10.37 10.11C10.45 9.94 10.41 9.8 10.35 9.68C10.29 9.56 9.79 8.33 9.58 7.83C9.38 7.35 9.17 7.42 9.03 7.41C8.89 7.4 8.73 7.4 8.57 7.4C8.4 7.4 8.14 7.46 7.91 7.7C7.69 7.94 7.03 8.56 7.03 9.81C7.03 11.06 7.95 12.27 8.08 12.44C8.2 12.61 9.87 15.18 12.44 16.29C13.05 16.55 13.53 16.71 13.91 16.83C14.53 17.03 15.08 16.99 15.52 16.92C16.01 16.84 17.07 16.28 17.29 15.66C17.51 15.04 17.51 14.5 17.43 14.38C17.36 14.26 17.2 14.2 16.95 14.08L16.5 14.05Z" fill="currentColor"/></svg>
-                        WhatsApp
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container text-center">
-            <p>&copy; 2026 AI Agency. Все права автоматизированы.</p>
+        <a href="#contacts" class="btn-nav">Обсудить проект</a>
+        <div class="burger" id="burger">
+            <span></span><span></span>
         </div>
-    </footer>
+    </div>
+</header>
 
-    <!-- Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
-    <!-- Custom Scripts -->
-    <script src="js/app.js"></script>
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <nav>
+        <a href="#about" class="mob-link">О нас</a>
+        <a href="#services" class="mob-link">Услуги</a>
+        <a href="#works" class="mob-link">Работы</a>
+        <a href="#contacts" class="mob-link">Контакт</a>
+    </nav>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-grid-overlay"></div>
+
+    <!-- Floating Hex Badges (Matter.js) -->
+    <div id="float-layer">
+        <div class="hex-badge" data-label="AI-Саппорт" data-vx="0.6" data-vy="0.4"></div>
+        <div class="hex-badge" data-label="TG-Бот" data-vx="-0.5" data-vy="0.7"></div>
+        <div class="hex-badge" data-label="RAG-Системы" data-vx="0.8" data-vy="-0.3"></div>
+        <div class="hex-badge" data-label="Саммари" data-vx="-0.7" data-vy="-0.5"></div>
+        <div class="hex-badge" data-label="LLM-Интеграция" data-vx="0.4" data-vy="0.8"></div>
+        <div class="hex-badge" data-label="Автоматизация" data-vx="-0.6" data-vy="0.3"></div>
+    </div>
+
+    <div class="hero-content">
+        <div class="hero-eyebrow"><span class="dot"></span>AI Agency нового поколения</div>
+        <h1 class="hero-title">
+            <span class="line" data-text="Мы строим">Мы строим</span>
+            <span class="line gradient-text" data-text="будущее">будущее</span>
+            <span class="line" data-text="вашего бизнеса">вашего бизнеса</span>
+        </h1>
+        <p class="hero-sub">Разрабатываем интеллектуальных ботов, нейросетевые продукты и системы автоматизации — под ключ, без шаблонов.</p>
+        <div class="hero-cta">
+            <a href="#works" class="btn btn-glow">Наши работы</a>
+            <a href="#contacts" class="btn btn-outline">Написать нам</a>
+        </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+    </div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee-strip">
+    <div class="marquee-track">
+        <span>AI-Решения</span><span class="sep">✦</span>
+        <span>Telegram Боты</span><span class="sep">✦</span>
+        <span>RAG Системы</span><span class="sep">✦</span>
+        <span>LLM Интеграция</span><span class="sep">✦</span>
+        <span>Автоматизация</span><span class="sep">✦</span>
+        <span>Генератор Саммари</span><span class="sep">✦</span>
+        <span>AI-Саппорт</span><span class="sep">✦</span>
+        <span>AI-Решения</span><span class="sep">✦</span>
+        <span>Telegram Боты</span><span class="sep">✦</span>
+        <span>RAG Системы</span><span class="sep">✦</span>
+        <span>LLM Интеграция</span><span class="sep">✦</span>
+        <span>Автоматизация</span><span class="sep">✦</span>
+        <span>Генератор Саммари</span><span class="sep">✦</span>
+        <span>AI-Саппорт</span><span class="sep">✦</span>
+    </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section class="about reveal-section" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-left">
+                <div class="section-tag">О нас</div>
+                <h2 class="section-heading">Шесть граней <br><span class="gradient-text">одного решения</span></h2>
+                <p class="about-desc">Hexa Studio — это команда AI-инженеров, дизайнеров и стратегов. Мы создаём умные цифровые продукты, которые работают на ваш бизнес 24/7, без остановок и без ошибок.</p>
+                <div class="about-metrics">
+                    <div class="metric">
+                        <div class="metric-num" data-target="98">0</div>
+                        <div class="metric-label">% точность AI</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-num" data-target="60">0</div>
+                        <div class="metric-label">+ проектов</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-num" data-target="10">0</div>
+                        <div class="metric-label">× ускорение</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-right">
+                <div class="hex-visual">
+                    <div class="hex-orbit">
+                        <div class="hex-center">
+                            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><polygon class="hex-center-shape" points="40,4 74,22 74,58 40,76 6,58 6,22"/></svg>
+                            <span>H</span>
+                        </div>
+                        <div class="orbit-item" style="--i:0">AI</div>
+                        <div class="orbit-item" style="--i:1">BOT</div>
+                        <div class="orbit-item" style="--i:2">RAG</div>
+                        <div class="orbit-item" style="--i:3">LLM</div>
+                        <div class="orbit-item" style="--i:4">API</div>
+                        <div class="orbit-item" style="--i:5">NLP</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services reveal-section" id="services">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag">Услуги</div>
+            <h2 class="section-heading">Что мы <span class="gradient-text">создаём</span></h2>
+        </div>
+        <div class="services-list">
+            <div class="service-item">
+                <div class="service-num">01</div>
+                <div class="service-icon-wrap"><svg viewBox="0 0 40 40"><polygon points="20,2 37,11 37,29 20,38 3,29 3,11"/></svg>🤖</div>
+                <div class="service-info">
+                    <h3>AI-Саппорт</h3>
+                    <p>Интеллектуальный помощник на базе LLM, который берёт на себя до 80% обращений клиентов, работает в режиме 24/7 и всегда в образе вашего бренда.</p>
+                </div>
+                <div class="service-arrow">→</div>
+            </div>
+            <div class="service-item">
+                <div class="service-num">02</div>
+                <div class="service-icon-wrap"><svg viewBox="0 0 40 40"><polygon points="20,2 37,11 37,29 20,38 3,29 3,11"/></svg>📱</div>
+                <div class="service-info">
+                    <h3>Telegram-Боты</h3>
+                    <p>Многофункциональные боты для продаж, онбординга, рассылок и развлечений. Интеграция с CRM, платёжными системами и внешними API.</p>
+                </div>
+                <div class="service-arrow">→</div>
+            </div>
+            <div class="service-item">
+                <div class="service-num">03</div>
+                <div class="service-icon-wrap"><svg viewBox="0 0 40 40"><polygon points="20,2 37,11 37,29 20,38 3,29 3,11"/></svg>⚡</div>
+                <div class="service-info">
+                    <h3>Генератор Саммари</h3>
+                    <p>Автоматическая конспектизация созвонов, переговоров и документов. Сохраняем ключевые инсайты — вы сосредоточены на главном.</p>
+                </div>
+                <div class="service-arrow">→</div>
+            </div>
+            <div class="service-item">
+                <div class="service-num">04</div>
+                <div class="service-icon-wrap"><svg viewBox="0 0 40 40"><polygon points="20,2 37,11 37,29 20,38 3,29 3,11"/></svg>🧠</div>
+                <div class="service-info">
+                    <h3>RAG-Системы</h3>
+                    <p>Retrieval-Augmented Generation: обучаем AI на ваших данных — документах, базах знаний и регламентах. Точные ответы из вашего контента.</p>
+                </div>
+                <div class="service-arrow">→</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WORKS ===== -->
+<section class="works reveal-section" id="works">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag">Портфолио</div>
+            <h2 class="section-heading">Наши <span class="gradient-text">работы</span></h2>
+        </div>
+        <div class="works-grid">
+
+            <div class="work-card work-card--large" data-index="01">
+                <div class="work-card-bg" style="--c1:#6B21A8;--c2:#4F46E5;"></div>
+                <div class="work-card-content">
+                    <div class="work-tag">AI-Саппорт</div>
+                    <h3>LexAI — юридический помощник</h3>
+                    <p>AI-бот для юридической фирмы, отвечающий на 4000+ запросов в день. Точность ответов 96%, снижение нагрузки на операторов на 73%.</p>
+                    <div class="work-metrics">
+                        <span>73% ↓ нагрузки</span>
+                        <span>4000+ запросов/день</span>
+                    </div>
+                </div>
+                <div class="work-visual work-visual--chat">
+                    <div class="chat-bubble bot">Добрый день! Чем могу помочь?</div>
+                    <div class="chat-bubble user">Каков порядок регистрации ИП?</div>
+                    <div class="chat-bubble bot typing"><span></span><span></span><span></span></div>
+                </div>
+            </div>
+
+            <div class="work-card" data-index="02">
+                <div class="work-card-bg" style="--c1:#0E7490;--c2:#0891B2;"></div>
+                <div class="work-card-content">
+                    <div class="work-tag">Telegram-Бот</div>
+                    <h3>ShopBot для e-commerce</h3>
+                    <p>Бот-магазин с оплатой, каталогом и отслеживанием заказов. Конверсия +34%.</p>
+                    <div class="work-metrics">
+                        <span>34% ↑ конверсия</span>
+                        <span>10K+ пользователей</span>
+                    </div>
+                </div>
+                <div class="work-visual work-visual--tg">
+                    <div class="tg-screen">
+                        <div class="tg-header">🛒 ShopBot</div>
+                        <div class="tg-btn">📦 Каталог</div>
+                        <div class="tg-btn">💳 Оплатить</div>
+                        <div class="tg-btn">📍 Отследить</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="work-card" data-index="03">
+                <div class="work-card-bg" style="--c1:#7C3AED;--c2:#DB2777;"></div>
+                <div class="work-card-content">
+                    <div class="work-tag">RAG-Система</div>
+                    <h3>КнowledgeBase для HR</h3>
+                    <p>Умная база знаний для онбординга: новые сотрудники находят ответы за секунды.</p>
+                    <div class="work-metrics">
+                        <span>90% ↓ вопросов HR</span>
+                        <span>200 сотрудников</span>
+                    </div>
+                </div>
+                <div class="work-visual work-visual--kb">
+                    <div class="kb-search">
+                        <div class="kb-icon">🔍</div>
+                        <div class="kb-line kb-line--full"></div>
+                    </div>
+                    <div class="kb-result"><div class="kb-dot"></div><div class="kb-line"></div></div>
+                    <div class="kb-result"><div class="kb-dot"></div><div class="kb-line kb-line--sm"></div></div>
+                    <div class="kb-result"><div class="kb-dot"></div><div class="kb-line"></div></div>
+                </div>
+            </div>
+
+            <div class="work-card" data-index="04">
+                <div class="work-card-bg" style="--c1:#065F46;--c2:#0D9488;"></div>
+                <div class="work-card-content">
+                    <div class="work-tag">Автоматизация</div>
+                    <h3>MeetingAI — саммари созвонов</h3>
+                    <p>Автоматические протоколы и саммари Zoom/Meet-созвонов с выделением задач и решений.</p>
+                    <div class="work-metrics">
+                        <span>x5 быстрее</span>
+                        <span>500+ созвонов/месяц</span>
+                    </div>
+                </div>
+                <div class="work-visual work-visual--summary">
+                    <div class="summary-card">
+                        <div class="summary-line l-title"></div>
+                        <div class="summary-line l-sm"></div>
+                        <div class="summary-line l-md"></div>
+                        <div class="summary-line l-sm"></div>
+                        <div class="summary-tag">✅ Задачи</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="process reveal-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag">Процесс</div>
+            <h2 class="section-heading">Как мы <span class="gradient-text">работаем</span></h2>
+        </div>
+        <div class="steps">
+            <div class="step"><div class="step-num">01</div><h3>Бриф</h3><p>Изучаем задачу, анализируем бизнес-процессы и определяем точки роста.</p></div>
+            <div class="step-arrow">→</div>
+            <div class="step"><div class="step-num">02</div><h3>Прототип</h3><p>Проектируем архитектуру решения и показываем первый рабочий демо.</p></div>
+            <div class="step-arrow">→</div>
+            <div class="step"><div class="step-num">03</div><h3>Разработка</h3><p>Строим и обучаем AI под вашу специфику. Итерации — каждую неделю.</p></div>
+            <div class="step-arrow">→</div>
+            <div class="step"><div class="step-num">04</div><h3>Запуск</h3><p>Запускаем, обучаем команду и сопровождаем после релиза.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACTS ===== -->
+<section class="contacts reveal-section" id="contacts">
+    <div class="container">
+        <div class="contacts-inner">
+            <div class="contacts-glow"></div>
+            <div class="section-tag">Контакты</div>
+            <h2 class="section-heading">Готовы к запуску?</h2>
+            <p class="contacts-desc">Расскажите о вашей задаче — мы ответим в течение часа и предложим решение бесплатно.</p>
+            <div class="contacts-btns">
+                <a href="https://t.me/yourbotname" target="_blank" rel="noopener" class="btn btn-tg">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.93 4.23L19.46 20.35C19.28 21.16 18.79 21.35 18.11 20.97L14.38 18.23L12.58 19.96C12.38 20.16 12.22 20.32 11.85 20.32L12.12 16.5L19.06 10.23C19.36 9.96 18.99 9.8 18.6 10.06L10.02 15.46L6.34 14.31C5.54 14.06 5.52 13.51 6.5 13.13L20.89 7.59C21.56 7.34 22.14 7.74 21.93 4.23Z"/></svg>
+                    Telegram
+                </a>
+                <a href="https://wa.me/79000000000" target="_blank" rel="noopener" class="btn btn-wa">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.91C17.18 3.03 14.69 2 12.04 2C6.53 2 2.04 6.49 2.04 12C2.04 13.76 2.5 15.45 3.36 16.94L2 22L7.17 20.64C8.61 21.43 10.29 21.84 12.03 21.84H12.04C17.55 21.84 22.04 17.35 22.04 11.84C22.04 9.18 21.01 6.68 19.05 4.91ZM12.04 20.16C10.55 20.16 9.11 19.76 7.87 19.02L7.58 18.85L4.51 19.65L5.33 16.65L5.14 16.34C4.33 15.05 3.9 13.55 3.9 12C3.9 7.52 7.55 3.87 12.04 3.87C14.21 3.87 16.24 4.72 17.77 6.25C19.3 7.78 20.15 9.8 20.15 11.98C20.14 16.47 16.51 20.16 12.04 20.16Z"/></svg>
+                    WhatsApp
+                </a>
+            </div>
+            <div class="contacts-email">или напишите: <a href="mailto:hello@hexastudio.ai">hello@hexastudio.ai</a></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container footer-inner">
+        <div class="footer-logo">
+            <svg class="logo-hex" viewBox="0 0 40 40"><polygon points="20,2 37,11 37,29 20,38 3,29 3,11"/></svg>
+            Hexa<span>Studio</span>
+        </div>
+        <p class="footer-copy">&copy; 2026 Hexa Studio. Все процессы автоматизированы.</p>
+        <div class="footer-socials">
+            <a href="https://t.me/yourbotname" target="_blank" rel="noopener">TG</a>
+            <a href="https://wa.me/79000000000" target="_blank" rel="noopener">WA</a>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
